@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+
+.cardWrapper h4,
+.cardWrapper h5,
+.cardWrapper h6,
+.cardWrapper p {
+  margin: 0;
+}
+
+.cardWrapper {
+  width: 1000px;
+  display: flex;
+	margin: auto;
+}
+
+.imageWrapper {
+  position: relative;
+  margin-right: 50px;
+	box-shadow: 9px 9px 0px -1px rgba(105, 172, 199, 0.871);
+	border-radius: 10px;
+}
+
+.imageWrapper button {
+  position: absolute;
+  top: 9px;
+  right: 13px;
+  background: none;
+  font-size: 30px;
+  border: none;
+  color: white;
+}
+
+.imageWrapper h4 {
+  position: absolute;
+  top: 225px;
+  right: 134px;
+  font-size: 40px;
+  color: white;
+}
+
+.imageWrapper img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+	filter: contrast(70%);
+}
+
+.descAndButton {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+  padding-bottom: 15px;
+	align-items: center;
+}
+
+.descAndButton h4 {
+  font-size: 30px;
+}
+
+.descAndButton button {
+  background: none;
+	border: 2px solid;
+	color: #e14f39;
+	border-radius: 5px;
+	font-weight: 700;
+	padding: 5px 10px;
+}
+
+.userDesc {
+	flex: 1;
+	margin-top: 20px;
+	font-family: 'Neucha', cursive;
+	font-size: 18px;
+}
+
+.lastBook {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+	flex: 1;
+	margin-top: 33px;
+}
+
+.lastBookWrapper {
+	margin-right: 15px;
+}
+
+.lastBook h6 {
+	font-size: 15px;
+}
+
+.lastBookText {
+  flex: 1;
+}
+
+.lastText {
+	color: #4c4c4cbe;
+}
+
+.bookName {
+	color: #e14f39;
+}
+
+.date {
+	color: #4c4c4cbe;
+}
+
+.lastBook img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  display: block;
+  justify-content: space-between;
+  border-radius: 50%;
+}
+
+.buttons {
+  display: flex;
+	margin-top: 33px;
+}
+
+.works {
+	border: 2px solid black;
+	border-radius: 6px;
+	padding: 10px 40px;
+	font-size: 20px;
+	margin-right: 40px;
+	box-shadow: 5px 5px 0px -1px #b9b2ae;
+}
+
+.subs {
+	background: #000;
+	color: white;
+	border-radius: 6px;
+	padding: 10px 15px;
+	font-size: 20px;
+	box-shadow: 5px 5px 0px -1px #b9b2ae;
+}
+
+body {
+	background-color: #f7ede8;
+}
+
+.descWrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
