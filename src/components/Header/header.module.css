@@ -1,0 +1,83 @@
+.header {
+    margin: 0;
+    padding: 0;
+}
+
+.headerMain {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    width: 90%;
+    padding: 25px 0 0 0;
+}
+
+.mainName {
+    font-size: 20px;
+    font-weight: 700;
+    padding-bottom: 4px;
+}
+
+/* .mainNavGenre {
+    cursor: pointer;
+} */
+
+.mainNav {
+    display: flex;
+    width: 40%;
+    padding-right: 200px;
+}
+
+.mainNavSearch {
+    display: flex;
+    width: 40%;
+    margin-left: 100px;
+}
+
+.mainNavButton {
+    padding-top: 2px;
+    cursor: pointer;
+}
+
+.mainNavInput {
+    width: 90%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding-left: 8px;
+    padding-top: 3px;
+    font-size: 15.6px;
+}
+
+.mainUser {
+    display: flex;
+}
+
+.mainUserImage {
+   width: 30px;
+   margin: -4px 7px 0 0;
+   cursor: pointer;
+}
+
+.mainUserImg {
+    width: 100%;
+    border-radius: 50%;
+}
+
+/* .categoryName::after {
+    bottom: 100%;
+    right: 4%;
+    border: solid transparent;
+    content: '';
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #ffffff;
+    border-width: 6px;
+    margin-left: -6px;
+} */
+
+
+
