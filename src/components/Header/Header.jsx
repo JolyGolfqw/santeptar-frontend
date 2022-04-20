@@ -2,8 +2,11 @@ import React from "react";
 import styles from "./header.module.css";
 import "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js";
 import { useSelector } from "react-redux";
+import { useState } from "react";
+import Signin from "../Signin/Signin";
 
 const Header = () => {
+    const [opened, setOpened] = useState(false)
   // const modalWindow = useSelector((state) => state.categories)
 
   return (
@@ -33,9 +36,10 @@ const Header = () => {
               alt=""
             />
           </div>
-          <div className={styles.user}>User</div>
+          <div onClick={() => setOpened(!opened)} className={styles.user}>User</div>
         </div>
       </div>
+      <Signin show={opened} onHide={() => setOpened(false)}/>
     </div>
   );
 };
