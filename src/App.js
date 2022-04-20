@@ -12,8 +12,6 @@ const App = () => {
       <Books/>
       <ModalBookDesc/>
     </div>
-    
-    </>
   );
 };
 
