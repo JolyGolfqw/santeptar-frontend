@@ -1,15 +1,13 @@
-import { useState } from "react";
-import Signin from "./components/Signin/Signin";
+import Header from "./components/Header/Header";
 
 function App() {
 
-  const [opened, setOpened] = useState(false)
   return (
     <>
-    <div onClick={() => setOpened(!opened)} className="App">
-      Hello world
+    <Header/>
+    <div  className="App">
     </div>
-    {opened ? <Signin></Signin> : null}
+    
     </>
   );
 }

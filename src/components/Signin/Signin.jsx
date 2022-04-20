@@ -1,29 +1,87 @@
-import React from 'react'
-import style from './styles.module.css'
+import React, { useState } from "react";
+import "./styles.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Modal from "react-bootstrap/Modal";
+import { Button } from "react-bootstrap";
+import Signup from "../Signup/Signup";
+import { useDispatch, useSelector } from "react-redux";
+import { auth } from "../../redux/features/application";
 
-export default function Signin() {
+export default function Signin(props) {
+  const dispatch = useDispatch();
+
+  const [signup, setSignup] = useState(false);
+  const [login, setLogin] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = (e) => {
+    setLogin(e.target.value);
+  };
+
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleAuth = (e) => {
+    e.preventDefault();
+    if (!login || !password) {
+      return alert("Заполните все поля");
+    }
+    dispatch(auth(login, password));
+
+  };
   return (
-    <div className={style.sign}>
-        <form>
-    <img class="mb-4" src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"/>
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
-    <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
-      <label for="floatingInput">Email address</label></div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password"/>
-      <label for="floatingPassword">Password</label>
-    </div>
-
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"/> Remember me
-      </label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">© 2017–2021</p>
-  </form>
-    </div>
-  )
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      {!signup ? (
+        <>
+          <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title-vcenter">
+              Авторизация
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <h6>Введите данные</h6>
+            <div className="form-floating formFloating">
+              <input
+                value={login}
+                onChange={(e) => handleLogin(e)}
+                type="text"
+                className="form-control"
+                id="floatingInput"
+                placeholder="name@example.com"
+              />
+              <label htmlFor="floatingInput">Email</label>
+            </div>
+            <div className="form-floating">
+              <input
+                value={password}
+                onChange={(e) => handlePassword(e)}
+                type="text"
+                className="form-control"
+                id="floatingInput"
+                placeholder="name@example.com"
+              />
+              <label htmlFor="floatingInput">Пароль</label>
+            </div>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={(e) => handleAuth(e)}>Войти</Button>
+          </Modal.Footer>
+          <div className="footer-signup">
+            У вас нет аккаунта?{" "}
+            <button onClick={() => setSignup(true)} className="register-button">
+              Зарегистрироваться
+            </button>
+          </div>
+        </>
+      ) : (
+        <Signup />
+      )}
+    </Modal>
+  );
 }
