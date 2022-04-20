@@ -1,0 +1,30 @@
+.sign {
+    background-color: aqua;
+
+}
+
+.form-floating {
+    margin-bottom: 10px;
+}
+
+.modal-header {
+    text-align: center;
+    border-bottom: none!important;
+}
+
+.modal-footer {
+    border-top: none!important;
+    padding: 0 12px!important;
+}
+
+.footer-signup {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.register-button {
+    background-color: transparent;
+    border: none;
+    font-weight: 600;
+    color: rgb(57, 57, 158);
+}
