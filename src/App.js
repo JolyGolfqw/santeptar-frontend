@@ -1,11 +1,16 @@
 import React from 'react';
-
-import MainPage from './pages/MainPage';
+import Carusel from "./components/Carusel/Carusel"
+import Books from "./components/Books/Books"
+import ModalBookDesc from './components/ModalBookDesc/ModalBookDesc';
+import Header from "./components/Header/Header";
 
 const App = () => {
   return (
     <div>
-      <MainPage/>
+      <Header/>
+      <Carusel/>
+      <Books/>
+      <ModalBookDesc/>
     </div>
   );
 };
