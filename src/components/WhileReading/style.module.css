@@ -1,0 +1,75 @@
+
+.image {
+  width: 200px;
+  margin-right: 15px;
+}
+
+.card {
+  display: flex;
+  align-items: flex-end;
+  width: 500px;
+  margin: auto;
+}
+
+.description {
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+  font-weight: 300;
+  font-size: 15px;
+  padding-bottom: 15px;
+}
+
+.authorName {
+  margin-bottom: 10px;
+  font-size: 25px;
+  font-weight: 600;
+}
+.btnRead {
+  margin-left: 70px;
+  border-radius: 4px;
+}
+
+.btn {
+  width: 110px;
+  height: 35px;
+  font-size: 23px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  position: relative;
+  transition: all 0.5s;
+  z-index: 1;
+  border-radius: 4px;
+}
+
+button::before {
+  border-radius: 4px;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: rgba(90, 48, 2, 0.865);
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+button:hover::before {
+  width: 100%;
+}
+
+button:hover {
+  color: rgb(240, 230, 230);
+}
+
+button:active:before {
+  background: #b9b9b9;
+}
+
+.descWrapper {
+    width: 250px;
+}

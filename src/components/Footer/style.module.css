@@ -1,0 +1,32 @@
+.footer{
+    width: 100%;
+    background-color: rgb(232, 244, 244);
+    margin-top: 50px;
+}
+.footer_content {
+    border-top: 1px solid;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding: 20px 0;
+
+}
+
+.leftData{
+    display: flex;
+    width: 150px;
+justify-content: space-between;
+}
+
+.rightData{
+    display: flex;
+    width: 110px;
+justify-content: space-between;
+   
+}
+
+.footerTextleft{
+    color: coral;
+}
+
