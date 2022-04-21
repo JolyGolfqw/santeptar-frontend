@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Modal from "react-bootstrap/Modal";
 import { Button } from "react-bootstrap";
 import Signup from "../Signup/Signup";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { auth } from "../../redux/features/application";
 
 export default function Signin(props) {

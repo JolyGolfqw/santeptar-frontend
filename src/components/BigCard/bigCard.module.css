@@ -1,13 +1,13 @@
 .bigCard {
   padding: 0;
-  margin: 0;
+  margin-top: 80px;
 }
 
 .bigCardBasis {
   display: flex;
   margin: auto;
   /* margin-top: 150px; */
-  width: 80%;
+  width: 70%;
   box-shadow: 48px;
   box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
   border-radius: 8px;
@@ -19,7 +19,7 @@
 }
 
 .bigCardImag {
-  width: 220px;
+  width: 250px;
   position: absolute;
   bottom: 40px;
   border-radius: 8px;
@@ -27,7 +27,7 @@
 
 .bigCardContent {
   margin-left: auto;
-  margin-left: 250px;
+  margin-left: 280px;
   padding-right: 50px;
 }
 
