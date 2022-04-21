@@ -6,7 +6,9 @@ import Signin from "../Signin/Signin";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Header = () => {
-  const [opened, setOpened] = useState(false);
+    const [opened, setOpened] = useState(false)
+    const [a, setA] = useState(false)
+
   // const modalWindow = useSelector((state) => state.categories)
 
   return (
@@ -26,7 +28,7 @@ const Header = () => {
               />
             </div>
           </div>
-          <div className={styles.mainNavStr}>Писать</div>
+          <div className={styles.mainNavStr} onClick={()=>setA(!a)}>Писать</div>
         </div>
         <div className={styles.mainUser}>
           <img
