@@ -6,7 +6,7 @@ const Footer = () => {
     <div className={styles.footer}>
       <div className={styles.footer_content}>
         <div className={styles.leftData}>
-          <div >Ⓒ2022</div>
+          <div >Ⓒ2022.</div>
           <span className={styles.footerTextleft}>book reader</span>
         </div>
 
