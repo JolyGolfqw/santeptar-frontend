@@ -64,6 +64,10 @@
     border-radius: 50%;
 }
 
+.listInline {
+    background-color: blueviolet;
+}
+
  /* .categoryName::after {
     bottom: 100%;
     right: 4%;
