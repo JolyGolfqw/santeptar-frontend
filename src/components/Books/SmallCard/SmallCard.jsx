@@ -5,12 +5,12 @@ const SmallCard = ({ item }) => {
   return (
     <div className={styles.card}>
       <div className={styles.card_img}>
-        <img className={styles.image} src={item.img} alt="img"></img>
+        <img className={styles.image} src={`http://localhost:4000/${item.img}`} alt="img"></img>
       </div>
       <div className={styles.card_info}>
         <p className={styles.text_title}>{item.title}</p>
         <p className={styles.text_body}>
-          {/* {item.description.substr(0, 98) + "..."} */}
+          {item.description.substr(0, 98) + "..."}
         </p>
         <button className={styles.card_button}>Подробнее</button>
       </div>
