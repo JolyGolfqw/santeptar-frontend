@@ -3,6 +3,7 @@ import SmallCard from "./SmallCard/SmallCard";
 import { loadBooks } from "../../redux/features/books";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "../Books/Books.module.css";
+import ModalBookDesc from "../ModalBookDesc/ModalBookDesc";
 
 const Books = () => {
   const books = useSelector((state) => state.books.items);

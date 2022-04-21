@@ -8,6 +8,7 @@ const CategoryCard = ({item}) => {
         <span className={styles.title}>{item.name}</span>
         <div className={styles.image}>
           <img
+					className={styles.img}
             src={item.image}
             alt="img"
           ></img>

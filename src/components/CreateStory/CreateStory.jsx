@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadCategories } from "../../redux/features/categories";
+import CreateStoryHeader from "./CreateStoryHeader";
 import style from "./styles.module.css";
 import "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js";
 import { postBook } from "../../redux/features/books";
@@ -70,11 +71,13 @@ console.log(chars);
   console.log(categories);
 
   return (
-    <div className={style.createComp}>
-      <div>
-        <div className={style.createImage}>
-          <div>
-            <input
+    <>
+      <CreateStoryHeader />
+      <div className={style.mainPage}>
+        <div className={style.createComp}>
+          <div className={style.createImage}>
+            <div>
+              <input
               type="file"
               id="upload"
               hidden
@@ -105,63 +108,68 @@ console.log(chars);
                 />
               </label>
             )}
+
+            </div>
           </div>
         </div>
-      </div>
+        <div className={style.details}>
+            <div className={style.titleCard}>
+              <span>Story Details</span>
+            </div>
+            <div className={style.funcional}>
 
-      <div className={style.details}>
-        <div>Story Details</div>
-        <div className={style.title}>
-          <h5>Title</h5>
-          <input
-          value={title}
-          onChange={(e) => handleTitle(e)}
-           type="text" placeholder="Untitled Story" />
-        </div>
+            <div className={style.title}>
+              <h5>Title </h5>
+              <input
+              value={title}
+              onChange={(e) => handleTitle(e)}
+              type="text" placeholder="Untitled Story" />
+            </div>
 
-        <div className={style.description}>
-          <h5>Description</h5>
-          <textarea
-          value={desc}
-          onChange={(e) => handleDesc(e)}
-           name="title" id="" cols="30" rows="10"></textarea>
-        </div>
+            <div className={style.title}>
+              <h5>Description <ion-icon name="alert-circle-outline"></ion-icon></h5>
+              <textarea 
+              value={desc}
+              onChange={(e) => handleDesc(e)}
+              name="title" id="" cols="30" rows="10"></textarea>
+            </div>
 
-        <div className={style.characters}>
-          <h5>Main Characters</h5>
-          <div>
-            <input
-            value={heroes}
-            onChange={(e) => handleChar(e)}
-            type="text" />
-            <button onClick={addChars}>+</button>
-            {chars.map(item => {
+            <div className={style.characters}>
+              <h5>Main Characters <ion-icon name="alert-circle-outline"></ion-icon></h5>
+              <div>
+                <input
+                  value={heroes}
+                  onChange={(e) => handleChar(e)}
+                  type="text" />
+                <button onClick={addChars}>+</button>
+                  {chars.map(item => {
                 return <div>{item}</div>
             })}
-          </div>
-        </div>
+              </div>
+            </div>
 
-        <div className={style.categories}>
-          <h5>Category</h5>
-          <select
-          value={category}
-          onChange={(e) => handleCategory(e)}
-           name="" id="">
-            {categories.map((item) => {
-              return <option value="1">{item.name}</option>;
-            })}
-          </select>
-        </div>
+            <div className={style.category}>
+              <h5>Category <ion-icon name="alert-circle-outline"></ion-icon></h5>
+              <select
+                value={category}
+                onChange={(e) => handleCategory(e)}
+                name="" id="" className={style.selects}>
+                {categories.map((item) => {
+                  return <option value="1">{item.name}</option>;
+                })}
+              </select>
+            </div>
 
-        <div className={style.tags}>
-          <h5>Tags</h5>
-          <div>
-            <input
-            value={tag}
-            onChange={(e) => handleTags(e)}
-             type="text" placeholder="tags" />
-            <button onClick={addTags}>+</button>
-            
+            <div className={style.characters}>
+              <h5>Tags <ion-icon name="alert-circle-outline"></ion-icon></h5>
+              <div>
+                <input
+                value={tag}
+                onChange={(e) => handleTags(e)}
+                type="text" placeholder="tags" />
+                <button onClick={addTags}>+</button>
+              </div>
+            </div>
           </div>
           {tags.map(item => {
                 return <div>{item}</div>
@@ -169,6 +177,6 @@ console.log(chars);
         </div>
         <button onClick={addStory}>Далее</button>
       </div>
-    </div>
+    </>
   );
 }

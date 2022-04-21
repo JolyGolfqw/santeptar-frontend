@@ -5,15 +5,13 @@ import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const ModalBookDesc = () => {
-  const [smShow, setSmShow] = useState(false);
+const ModalBookDesc = (props) => {
+
+	const {openModal, setOpenModal, item} = props;
 
   return (
     <div>
-      <Button onClick={() => setSmShow(true)} className="me-2">
-        Small modal
-      </Button>
-      <Modal size="lg" show={smShow} onHide={() => setSmShow(false)}>
+      <Modal size="lg" show={openModal} onHide={() => setOpenModal(false)}>
         <Modal.Body>
           <div
             className={styles.content}
@@ -24,31 +22,24 @@ const ModalBookDesc = () => {
           >
             <div className={styles.modal_image}>
               <img
-                src="https://img-gorod.ru/29/122/2912202_detail.jpg"
+                src={item.img}
                 alt="img"
               ></img>
             </div>
             <div style={{ marginLeft: 20 }}>
-              <h3>Ibragim Sardalov</h3>
-              <div class="condition">Завершенная история</div>
+              <h3>{item.title}</h3>
+              <div className="condition">Завершенная история</div>
               <div style={{ marginTop: 30 }}>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem,
-                ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum
-                dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor
-                sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit
-                amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet
-                consectetur adipisicing elit. Lorem, ipsum dolor sit amet
-                consectetur adipisicing elit. Lorem, ipsum dolor sit amet
-                consectetur adipisicing elit...
+                {item.description}
               </div>
               <button
-                class="learn-more"
+                className="learn-more"
                 style={{ marginTop: 50, marginLeft: 280 }}
               >
-                <span class="circle" aria-hidden="true">
-                  <span class="icon arrow"></span>
+                <span className="circle" aria-hidden="true">
+                  <span className="icon arrow"></span>
                 </span>
-                <span class="button-text">Начать читать</span>
+                <span className="button-text">Начать читать</span>
               </button>
             </div>
           </div>
