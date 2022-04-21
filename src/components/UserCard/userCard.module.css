@@ -28,6 +28,7 @@
   font-size: 30px;
   border: none;
   color: white;
+	cursor: pointer;
 }
 
 .imageWrapper h4 {
@@ -95,16 +96,12 @@
   flex: 1;
 }
 
-.lastText {
+.lastText, .date {
 	color: #4c4c4cbe;
 }
 
 .bookName {
 	color: #e14f39;
-}
-
-.date {
-	color: #4c4c4cbe;
 }
 
 .lastBook img {
@@ -128,6 +125,7 @@
 	font-size: 20px;
 	margin-right: 40px;
 	box-shadow: 5px 5px 0px -1px #b9b2ae;
+	cursor: pointer;
 }
 
 .subs {
@@ -137,10 +135,7 @@
 	padding: 10px 15px;
 	font-size: 20px;
 	box-shadow: 5px 5px 0px -1px #b9b2ae;
-}
-
-body {
-	background-color: #f7ede8;
+	cursor: pointer;
 }
 
 .descWrapper {

@@ -39,7 +39,7 @@ const UserCard = () => {
 				</div>
 				<div className={styles.buttons}>
 					<div className={styles.works}>
-						<h6>5 работ</h6>
+						<h6>2 книги</h6>
 					</div>
 					<div className={styles.subs}>
 						<h6>15 подписчиков</h6>

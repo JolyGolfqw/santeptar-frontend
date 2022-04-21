@@ -1,8 +1,8 @@
 .category_content {
-    width: 1000px;
-    margin: auto;
+    width: 1180px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 40px;
+		margin-top: 20px;
+		margin-left: 120px;
 }
