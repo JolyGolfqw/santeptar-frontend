@@ -1,28 +1,24 @@
 .header {
   margin: 0;
   padding: 0;
-  background-color: #ecdbe2;
-
+  background-color: #f7ede8;
 }
 
 .headerMain {
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: auto;
   width: 90%;
-padding: 20px;}
+  padding: 20px;
+}
 
 .mainName {
   font-size: 20px;
   font-weight: 700;
   padding-bottom: 4px;
+	cursor: pointer;
 }
-
-/* .mainNavGenre {
-    cursor: pointer;
-} */
 
 .mainNav {
   display: flex;
@@ -37,19 +33,25 @@ padding: 20px;}
 }
 
 .mainNavButton {
+	display: flex;
+	align-items: center;
   padding-top: 2px;
   cursor: pointer;
+	color: black;
 }
 
 .mainNavInput {
   width: 80%;
   background-color: transparent;
-  border: none;
   outline: none;
-  padding: 0;
-  
+	border: none;
+	font-size: 16px;
+	margin-left: 2px;
+	color: rgba(0, 0, 0, 0.6);
 }
-
+.mainNavInput::placeholder {
+	color: black;
+}
 .mainUser {
   display: flex;
 }
@@ -64,25 +66,35 @@ padding: 20px;}
   padding: 0;
 }
 .icon {
-    padding: 3px;
+  padding: 3px;
 }
 
-
-.listInline {
-    background-color: blueviolet;
+.arrow {
+  display: flex;
+  align-items: center;
+  margin-left: 4px;
 }
 
- /* .categoryName::after {
-    bottom: 100%;
-    right: 4%;
-    border: solid transparent;
-    content: '';
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    border-color: rgba(255, 255, 255, 0);
-    border-bottom-color: #ffffff;
-    border-width: 6px;
-    margin-left: -6px;
-}  */
+.mainNavGenre {
+  display: flex;
+  cursor: pointer;
+}
+
+.genresModal {
+	padding-top: 15px;
+	padding-left: 15px;
+	display: flex;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  position: absolute;
+  z-index: 1;
+  right: 472px;
+  top: 72px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.column {
+	margin-right: 24px;
+	margin-bottom: 18px;
+}
+
