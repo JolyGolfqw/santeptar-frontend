@@ -15,7 +15,7 @@ const SmallCard = ({ item }) => {
     <>
       <div className={styles.card}>
         <div className={styles.card_img}>
-          <img className={styles.image} src={item.img} alt="img"></img>
+          <img className={styles.image} src={`http://localhost:4000/${item.img}`} alt="img"></img>
         </div>
         <div className={styles.card_info}>
           <p className={styles.text_title}>{item.title}</p>
