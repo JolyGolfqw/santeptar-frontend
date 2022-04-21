@@ -12,7 +12,7 @@ const SmallCard = ({ item }) => {
         <p className={styles.text_body}>
           {item.description.substr(0, 98) + "..."}
         </p>
-        <button className={styles.card_button}>Read More</button>
+        <button className={styles.card_button}>Подробнее</button>
       </div>
     </div>
   );
