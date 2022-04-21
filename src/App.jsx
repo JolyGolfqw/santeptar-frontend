@@ -9,6 +9,8 @@ import BookAddingPage from './pages/BookAddingPage';
 import MainPage from './pages/MainPage';
 import Footer from "./components/Footer/Footer";
 import Categories from './components/Categories/Categories';
+import CategoriesPage from './pages/CategoriesPage/CategoriesPage';
+import Profile from './pages/Profile/Profile';
 
 
 const App = () => {
@@ -17,9 +19,8 @@ const App = () => {
     <Routes>
       <Route path="/" element={<MainPage />} />
       <Route path="/myworks/new" element={<BookAddingPage />} />
-      <Route path="/news/:id" element={<Categories />} />
-      {/* <Route path="/signin" element={<SigninPage />} />
-      <Route path="/signup" element={<SigninUpPage />} /> */} */}
+      <Route path="/categories" element={<CategoriesPage />} />
+      <Route path="/profile" element={<Profile />} />
     </Routes>
   </BrowserRouter>
   );

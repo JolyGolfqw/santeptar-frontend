@@ -1,0 +1,23 @@
+.userInfo {
+	background-color: #f7ede8;
+	padding: 50px 0 50px 0;
+}
+
+.userStories p, .userStories h1 {
+	margin: 0px;
+	margin-left: 120px;
+}
+
+.userStories {
+	padding: 50px 0 50px 0;
+}
+
+.userReadingBook {
+	background-color: #edf3f7;
+	padding: 50px 0 50px 0;
+}
+
+.userReadingBook h1 {
+	margin: 0px;
+	margin-left: 120px;
+} 
