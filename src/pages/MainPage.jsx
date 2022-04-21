@@ -4,6 +4,7 @@ import Header from "../components/Header/Header";
 import Books from "../components/Books/Books";
 import BigCard from "../components/BigCard/BigCard";
 import ModalBookDesc from "../components/ModalBookDesc/ModalBookDesc";
+import Footer from "../components/Footer/Footer";
 export default function MainPage() {
   return (
     <div>
@@ -21,7 +22,7 @@ export default function MainPage() {
       <div className="suggestions">Лучшее предложение для вас</div>
       <BigCard />
       <Books />
-      <ModalBookDesc/>
+      <Footer/>
     </div>
   );
 }

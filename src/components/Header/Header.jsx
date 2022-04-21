@@ -4,10 +4,15 @@ import "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js";
 import { useState } from "react";
 import Signin from "../Signin/Signin";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
-    const [opened, setOpened] = useState(false)
-    const [a, setA] = useState(false)
+  const [opened, setOpened] = useState(false);
+  const navigate = useNavigate();
+
+  const createBook = () => {
+    return navigate("/myworks/new");
+  };
 
   // const modalWindow = useSelector((state) => state.categories)
 
@@ -28,7 +33,12 @@ const Header = () => {
               />
             </div>
           </div>
-          <div className={styles.mainNavStr} onClick={()=>setA(!a)}>Писать</div>
+          <div
+            className={styles.mainNavStr}
+            onClick={createBook}
+          >
+            Писать
+          </div>
         </div>
         <div className={styles.mainUser}>
           <img

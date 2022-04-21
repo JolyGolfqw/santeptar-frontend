@@ -10,7 +10,6 @@ const Books = () => {
   const loading = useSelector((state) => state.books.loading);
   const dispatch = useDispatch();
 
-  console.log(1);
 
   useEffect(() => {
     dispatch(loadBooks());

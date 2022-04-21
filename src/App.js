@@ -8,27 +8,20 @@ import Header from "./components/Header/Header";
 import BookAddingPage from './pages/BookAddingPage';
 import MainPage from './pages/MainPage';
 import Footer from "./components/Footer/Footer";
+import Categories from './components/Categories/Categories';
 
 
 const App = () => {
   return (
-    <>
-    <div>
-      {/* <Header/> */}
-      {/* <Carusel/>
-      <Books/>
-      <ModalBookDesc/> */}
-    </div>
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<MainPage />} />
       <Route path="/myworks/new" element={<BookAddingPage />} />
-      {/* <Route path="/news/:id" element={<FullNews />} />
-      <Route path="/signin" element={<SigninPage />} />
-      <Route path="/signup" element={<SigninUpPage />} /> */}
+      <Route path="/news/:id" element={<Categories />} />
+      {/* <Route path="/signin" element={<SigninPage />} />
+      <Route path="/signup" element={<SigninUpPage />} /> */} */}
     </Routes>
   </BrowserRouter>
-  </>
   );
 };
 
