@@ -7,6 +7,8 @@ import Signin from "../Signin/Signin";
 
 const Header = () => {
     const [opened, setOpened] = useState(false)
+    const [a, setA] = useState(false)
+
   // const modalWindow = useSelector((state) => state.categories)
 
   return (
@@ -26,7 +28,7 @@ const Header = () => {
               placeholder="Поиск"
             />
           </div>
-          <div className={styles.mainNavStr}>Писать</div>
+          <div className={styles.mainNavStr} onClick={()=>setA(!a)}>Писать</div>
         </div>
         <div className={styles.mainUser}>
           <div className={styles.mainUserImage}>
