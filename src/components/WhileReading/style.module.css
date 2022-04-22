@@ -3,7 +3,13 @@
   border-radius: 10px;
   margin-right: 15px;
 }
-
+.reversCard {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  width: 1200px;
+  
+}
 .card {
   display: flex;
   align-items: flex-end;
