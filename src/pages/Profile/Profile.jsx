@@ -4,7 +4,7 @@ import BigCard from "../../components/BigCard/BigCard";
 import Header from "../../components/Header/Header";
 import styles from "./profile.module.css";
 import Footer from "../../components/Footer/Footer";
-import WhileReadingCard from "../../components/WhileReading/WhileReading";
+import WhileReadingCarousel from "../../components/WhileReading/WhileReadingCarousel";
 
 
 const Profile = () => {
@@ -26,7 +26,7 @@ const Profile = () => {
       <div className={styles.userReadingBook}>
         <h1>Что читает Ридван</h1>
         <div>
-           <WhileReadingCard/>
+           <WhileReadingCarousel/>
         </div>
       </div>
       <Footer />
