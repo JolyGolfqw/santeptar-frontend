@@ -4,7 +4,7 @@
   border-radius: 15px;
 }
 .bgcolor {
-    background-color: #f7ede8;
+    background-color: #ecdbe2;
 
 }
 .content {
@@ -15,8 +15,7 @@
   margin-top: 40px;
   margin-bottom: 15px;
 }
-
-.bgcolor h1 {
+h1 {
   text-align: center;
   font-size: 90px;
   font-weight: bolder;
@@ -30,8 +29,7 @@
   width: 400px;
   margin: auto;
 }
-
-.bgcolor span {
+span {
   color: rgb(255, 89, 0);
 }
 .spam {
@@ -40,5 +38,4 @@
 }
 .block {
     display: block;
-    color:  #ecdbe2;
 }
