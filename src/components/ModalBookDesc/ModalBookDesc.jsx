@@ -10,7 +10,7 @@ const ModalBookDesc = (props) => {
 
   return (
     <div>
-      <Modal size="lg" show={openModal} onHide={() => setOpenModal(false)}>
+      <Modal size="lg" show={openModal} onHide={() => setOpenModal(false)} centered>
         <Modal.Body>
           <div
             className={styles.content}
