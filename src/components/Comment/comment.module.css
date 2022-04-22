@@ -1,0 +1,34 @@
+.cell {
+  display: flex;
+  width: 40%;
+  margin: auto;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.image {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.contentHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.buttonRemove {
+    cursor: pointer;
+    padding-top: 3px;
+}
+
+.dateWriting {
+    margin: 5px 0 5px 0;
+    color: rgba(0, 0, 0, 0.582);
+}
