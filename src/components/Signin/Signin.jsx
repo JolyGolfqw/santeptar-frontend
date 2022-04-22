@@ -33,19 +33,18 @@ export default function Signin(props) {
   return (
     <Modal
       {...props}
-      size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
       {!signup ? (
         <>
-          <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title-vcenter">
+          <Modal.Header>
+            <Modal.Title id="contained-modal-title-vcenter" className="auth">
               Авторизация
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <h6>Введите данные</h6>
+            <h6 className="h6">Введите данные</h6>
             <div className="form-floating formFloating">
               <input
                 value={login}
@@ -70,7 +69,7 @@ export default function Signin(props) {
             </div>
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={(e) => handleAuth(e)}>Войти</Button>
+            <Button onClick={(e) => handleAuth(e)} className="btn">Войти</Button>
           </Modal.Footer>
           <div className="footer-signup">
             У вас нет аккаунта?{" "}

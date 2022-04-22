@@ -4,7 +4,6 @@ import { loadCategories } from "../../redux/features/categories";
 import CreateStoryHeader from "./CreateStoryHeader";
 import style from "./styles.module.css";
 import "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js";
-import { postBook } from "../../redux/features/books";
 
 export default function CreateStory() {
   const dispatch = useDispatch();
@@ -120,6 +119,7 @@ console.log(chars);
 
             <div className={style.title}>
               <h5>Title </h5>
+              <input type="text" placeholder="Untitled Story" />
               <input
               value={title}
               onChange={(e) => handleTitle(e)}

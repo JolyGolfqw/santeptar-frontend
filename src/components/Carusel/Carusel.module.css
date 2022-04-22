@@ -5,6 +5,8 @@
   height: 210px;
   border-radius: 15px;
 }
+.bgcolor {
+    background-color: #ecdbe2;
 
 .content {
   width: 750px;
@@ -13,8 +15,7 @@
 .main {
   margin-top: 40px;
 }
-
-.bgcolor h1 {
+h1 {
   text-align: center;
   font-size: 90px;
   font-weight: bolder;
@@ -30,6 +31,8 @@
   margin: auto;
 	margin-bottom: 55px;
 }
+span {
+  color: rgb(255, 89, 0);
 
 .bgcolor h1 span {
   color: rgb(239, 95, 18);
