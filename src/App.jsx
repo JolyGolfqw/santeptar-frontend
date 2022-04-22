@@ -11,6 +11,7 @@ import Footer from "./components/Footer/Footer";
 import Categories from "./components/Categories/Categories";
 import CategoriesPage from "./pages/CategoriesPage/CategoriesPage";
 import Profile from "./pages/Profile/Profile";
+import SearchBooksPage from "./pages/SearchBooksPage/SearchBooksPage";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/myworks/new" element={<BookAddingPage />} />
           <Route path="/categories" element={<CategoriesPage />} />
           <Route path="/profile" element={<Profile />} />
+					<Route path="/searchbooks" element={<SearchBooksPage />} />
         </Routes>
       </BrowserRouter>
     </>

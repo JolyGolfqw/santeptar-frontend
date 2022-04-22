@@ -10,7 +10,7 @@ const UserCard = () => {
           src="https://html5css.ru/howto/pineapple.jpg"
           alt="book"
         />
-        <h4>Ридван</h4>
+        <h4>Ананасик</h4>
         <button>
           <ion-icon name="ellipsis-horizontal-circle-outline"></ion-icon>
         </button>
