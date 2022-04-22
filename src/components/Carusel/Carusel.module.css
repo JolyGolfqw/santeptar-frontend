@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
 .image {
   width: 750px;
   height: 210px;
@@ -6,14 +8,12 @@
 .bgcolor {
     background-color: #ecdbe2;
 
-}
 .content {
   width: 750px;
   margin: auto;
 }
 .main {
   margin-top: 40px;
-  margin-bottom: 15px;
 }
 h1 {
   text-align: center;
@@ -21,20 +21,26 @@ h1 {
   font-weight: bolder;
   width: 1100px;
   margin: auto;
-  padding: 20px;
+  padding: 30px 0px;
+	font-family: 'Montserrat', sans-serif;
 }
 .text {
   font-size: 20px;
   text-align: center;
   width: 400px;
   margin: auto;
+	margin-bottom: 55px;
 }
 span {
   color: rgb(255, 89, 0);
+
+.bgcolor h1 span {
+  color: rgb(239, 95, 18);
+	font-family: 'Montserrat', sans-serif;
 }
 .spam {
-    font-weight: 500;
-    color: black;
+    color: rgba(0, 0, 0, 0.8);
+		font-family: 'Montserrat', sans-serif;
 }
 .block {
     display: block;

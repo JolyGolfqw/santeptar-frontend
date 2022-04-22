@@ -100,3 +100,45 @@ button:hover .circle .icon.arrow {
 button:hover .button-text {
   color: #fff;
 }
+
+.info {
+	display: flex;
+	margin: 15px 0px 10px 0px;
+}
+
+.likes, .time {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.likesIcon, .bookIcon {
+	display: flex;
+}
+
+.likesIcon div, .bookIcon div {
+	margin-right: 10px;
+	font-size: 20px;
+}
+
+.likes {
+	margin-right: 25px;
+	border-right: 1px solid gray;
+	padding-right: 25px;
+}
+
+.endedStories {
+	text-align: center;
+	width: 42%;
+	background-color: #008000;
+	color: white;
+	padding: 5px;
+	padding-bottom: 7px;
+	border-radius: 15px;
+	margin: 15px 0px;
+}
+
+.endedStories h5 {
+	font-size: 15px;
+	margin: 0;
+}
