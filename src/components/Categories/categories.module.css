@@ -3,6 +3,6 @@
   width: 1180px;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 20px;
   margin-left: 120px;
+	margin-bottom: 30px;
 }

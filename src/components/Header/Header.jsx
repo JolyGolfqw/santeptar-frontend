@@ -13,8 +13,8 @@ const Header = () => {
   const [genresModal, setGenresModal] = useState(false);
 
   const handleClick = () => {
-		setGenresModal(!genresModal)
-	};
+    setGenresModal(!genresModal);
+  };
 
   const [opened, setOpened] = useState(false);
   const navigate = useNavigate();
@@ -27,14 +27,16 @@ const Header = () => {
     return navigate("/categories");
   };
 
-	const showMainPage = () => {
-		return navigate('/')
-	}
+  const showMainPage = () => {
+    return navigate("/");
+  };
 
   return (
     <div className={styles.header}>
       <div className={styles.headerMain}>
-        <div className={styles.mainName} onClick={showMainPage}>book reader</div>
+        <div className={styles.mainName} onClick={showMainPage}>
+          book reader
+        </div>
         <div className={styles.mainNav}>
           <div className={styles.mainNavGenre} onClick={handleClick}>
             <div className={styles.mainNavGenre}>Жанры</div>
@@ -44,10 +46,12 @@ const Header = () => {
           </div>
           <div className={styles.mainNavSearch}>
             <div className={styles.mainNavButton}>
-              <ion-icon
-                name="search-outline"
-                onClick={showCategories}
-              ></ion-icon>
+              
+                <ion-icon
+                  name="search-outline"
+                  onClick={showCategories}
+                ></ion-icon>
+            
               <input
                 className={styles.mainNavInput}
                 type="text"
@@ -71,7 +75,7 @@ const Header = () => {
         </div>
       </div>
       <Signin show={opened} onHide={() => setOpened(false)} />
-			{genresModal && <GenresModal/>}
+      {genresModal && <GenresModal />}
     </div>
   );
 };
@@ -101,11 +105,7 @@ const GenresModal = () => {
     </div>
   ));
 
-  return (
-    <div className={styles.genresModal}>
-     {content}
-    </div>
-  );
+  return <div className={styles.genresModal}>{content}</div>;
 };
 
 export default Header;
