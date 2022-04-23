@@ -5,6 +5,7 @@ const initialState = {
     errorSingnIn: null,
     token: localStorage.getItem("token"),
     user: localStorage.getItem("user"),
+    userName: localStorage.getItem('name')
   };
   
   export default function application(state = initialState, action) {
@@ -49,6 +50,8 @@ const initialState = {
   
           localStorage.setItem("token", json.token);
           localStorage.setItem("user", json.id);
+          localStorage.setItem("name", json.name);
+
         }
       } catch (err) {
         dispatch({ type: "application/signin/rejected", error: err.message });

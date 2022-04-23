@@ -20,7 +20,7 @@ const SmallCard = ({ item }) => {
         <div className={styles.card_info}>
           <p className={styles.text_title}>{item.title}</p>
           <p className={styles.text_body}>
-            {item.description.substr(0, 98) + "..."}
+            {item.description && item.description.substr(0, 98) + "..."}
           </p>
           <button
             onClick={() => handleClick(item._id)}
