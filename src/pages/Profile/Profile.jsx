@@ -9,6 +9,8 @@ import WhileReadingCarousel from "../../components/WhileReading/WhileReadingCaro
 
 const Profile = () => {
 
+    const userName = localStorage.getItem('name')
+
   return (
     <>
       <div className={styles.firstSection}>
@@ -18,13 +20,13 @@ const Profile = () => {
         </div>
       </div>
       <div className={styles.userStories}>
-        <h1>Истории от Ридвана</h1>
+        <h1>{`Истории от ${userName}`}</h1>
         <p>2 опубликованных работ</p>
         <BigCard />
         <BigCard />
       </div>
       <div className={styles.userReadingBook}>
-        <h1>Что читает Ридван</h1>
+        <h1>{`Что читает ${userName}`}</h1>
         <div>
            <WhileReadingCarousel/>
         </div>
