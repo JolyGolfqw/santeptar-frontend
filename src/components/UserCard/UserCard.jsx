@@ -30,7 +30,7 @@ const UserCard = () => {
     }
   }, [dispatch, photo]);
 
-//   console.log(users);
+  console.log(currentUser);
 
   const handleUpdateAvatar = () => {
     dispatch(editAvatar(photo, currentUser._id));

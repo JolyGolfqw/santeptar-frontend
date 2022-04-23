@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
+import { loadBooks } from "../../redux/features/books";
 import style from "../SingleBookRead/singleBookRead.module.css";
 import CommentPost from "./CommentPost";
 const SingleBookRead = () => {
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(loadBooks())
+  }, [dispatch])
+
+  const books = useSelector((state) => state.books.items);
+
+  const { id } = useParams()
+
+  const currentBook = books.find(item => item._id === id)
+
+  console.log(currentBook)
+
   return (
     <>
       <Header />

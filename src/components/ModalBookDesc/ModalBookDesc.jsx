@@ -4,6 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
 
 const ModalBookDesc = (props) => {
   const { openModal, setOpenModal, item } = props;
@@ -55,7 +56,7 @@ const ModalBookDesc = (props) => {
                 <span className="circle" aria-hidden="true">
                   <span className="icon arrow"></span>
                 </span>
-                <span className="button-text">Начать читать</span>
+                <Link to={`/book/${item._id}`}><span className="button-text">Начать читать</span></Link>
               </button>
             </div>
           </div>

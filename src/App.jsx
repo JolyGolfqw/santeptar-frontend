@@ -13,6 +13,7 @@ import CategoriesPage from "./pages/CategoriesPage/CategoriesPage";
 import Profile from "./pages/Profile/Profile";
 import CategotyLinkPage from "./components/CategoryLinkPage/CategotyLinkPage";
 import SearchBooksPage from "./pages/SearchBooksPage/SearchBooksPage";
+import SingleBookRead from "./pages/SingleBookRead/SingleBookRead";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/render/category" element={<CategotyLinkPage />} />
 					<Route path="/searchbooks" element={<SearchBooksPage />} />
+          <Route path="/book/:id" element={<SingleBookRead/>} />
         </Routes>
       </BrowserRouter>
     </>
