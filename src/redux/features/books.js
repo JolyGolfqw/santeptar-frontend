@@ -13,7 +13,7 @@ export default function books(state = initialState, action) {
     case "books/get/rejected":
       return { ...state, error: action.payload };
 
-      case "books/post/pending":
+    case "books/post/pending":
       return {
         ...state,
         loading: true,
@@ -48,29 +48,39 @@ export const loadBooks = () => {
   };
 };
 
-export const postBook = (file, title, description, mainCharacters, tags) => {
-    return async (dispatch) => {
-        dispatch({ type: "books/post/pending" });
-        try {
-        const formData = new FormData();
-        formData.append("img", file);
-        formData.append('title', title)
-        formData.append("description", description);
-        // formData.append('category', category)
-        mainCharacters.forEach(char => formData.append('mainCharacters[]', mainCharacters))
-        // formData.append('mainCharacters', mainCharacters)
-        formData.append('tags', tags)
-        // formData.append('condition', condition)
-        // formData.append('author', author)
-        const res = await fetch(`http://localhost:4000/books`, {
-          method: "POST",
-          body: formData,
-        });
-        const data = await res.json();
-  
-        dispatch({ type: "books/post/fulfilled", payload: data });
-      } catch (error) {
-        dispatch({ type: "books/post/rejected", payload: error.message });
-      }
-    };
+export const postBook = (
+  file,
+  title,
+  text,
+  chars,
+  tags,
+  description,
+  category,
+
+) => {
+  return async (dispatch) => {
+    dispatch({ type: "books/post/pending" });
+    try {
+      const formData = new FormData();
+      formData.append("img", file);
+      formData.append("title", title);
+      formData.append("description", description);
+      formData.append("category", category);
+    formData.append('mainCharacters', chars)
+    formData.append('tags', tags)
+    formData.append("text", text);
+      // formData.append('condition', condition)
+    //   formData.append("author", author);
+      const res = await fetch(`http://localhost:4000/books`, {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json();
+      console.log(data);
+
+      dispatch({ type: "books/post/fulfilled", payload: data });
+    } catch (error) {
+      dispatch({ type: "books/post/rejected", payload: error.message });
+    }
   };
+};
