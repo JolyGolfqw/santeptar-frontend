@@ -41,8 +41,8 @@ export default function Signup() {
 
   return (
     <>
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
+      <Modal.Header >
+        <Modal.Title id="contained-modal-title-vcenter" className="title">
           Регистрация
         </Modal.Title>
       </Modal.Header>

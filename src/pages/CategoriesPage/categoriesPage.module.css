@@ -1,4 +1,9 @@
 .categories h1 {
 	margin: 0px;
 	margin-left: 120px;
+	margin-top: 10px;
+}
+
+.categories {
+	padding: 25px 0px 0px 0px
 }

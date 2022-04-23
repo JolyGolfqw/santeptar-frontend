@@ -50,6 +50,7 @@ const UserCard = () => {
         />
         <h4>{currentUser ? currentUser.name : ""}</h4>
         <button onClick={() => setOpened(!opened)}>
+
           <ion-icon name="ellipsis-horizontal-circle-outline"></ion-icon>
         </button>
         {opened && (

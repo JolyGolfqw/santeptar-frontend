@@ -1,3 +1,7 @@
 .registerButton {
-    margin-bottom: 10px!important;
+    margin-bottom: 20px!important;
+}
+.title {
+    margin: auto;
+    margin-top: 10px;
 }

@@ -1,5 +1,9 @@
-.userInfo {
+.firstSection {
+	padding: 25px 0px 60px 0px;
 	background-color: #f7ede8;
+}
+
+.userInfo {
 	padding: 50px 0 50px 0;
 }
 
@@ -8,12 +12,18 @@
 	margin-left: 120px;
 }
 
+.userStories p {
+	margin-top: 10px;
+	font-size: 18px;
+}
+
 .userStories {
 	padding: 50px 0 50px 0;
+	background-color: #edf3f7;
 }
 
 .userReadingBook {
-	background-color: #edf3f7;
+	background-color: #fff;
 	padding: 50px 0 50px 0;
 }
 
@@ -21,3 +31,7 @@
 	margin: 0px;
 	margin-left: 120px;
 } 
+
+.carousel {
+	display: flex;
+}
