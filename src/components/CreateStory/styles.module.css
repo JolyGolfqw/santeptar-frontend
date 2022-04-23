@@ -194,3 +194,9 @@
 .category h5 {
   margin-top: 10px;
 }
+
+.bookText {
+    width: 100%;
+    padding: 10px;
+    height: 90%;
+}
