@@ -1,0 +1,334 @@
+/*! BUTTON */
+.fancy {
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: #fff;
+  display: inline-block;
+  /* float: right; */
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-top: 20px;
+  outline: none;
+  overflow: visible;
+  padding: 1.25em 2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  font-size: 13px;
+}
+
+.fancy::before {
+  content: " ";
+  width: 1.5625rem;
+  height: 2px;
+  background: rgb(0, 0, 0);
+  top: 50%;
+  left: 1.5em;
+  position: absolute;
+  transform: translateY(-50%);
+  transform-origin: center;
+  transition: background 0.3s linear, width 0.3s linear;
+}
+
+.fancy .text {
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  padding-left: 2em;
+  display: block;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
+
+.fancy .top_key {
+  height: 2px;
+  width: 1.5625rem;
+  top: -2px;
+  left: 0.625rem;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, left 0.3s ease-out;
+}
+
+.fancy .btn1 {
+  height: 2px;
+  width: 1.5625rem;
+  right: 1.875rem;
+  bottom: -2px;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy .btn2 {
+  height: 2px;
+  width: 0.625rem;
+  right: 0.625rem;
+  bottom: -2px;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy:hover {
+  color: white;
+  background: rgb(0, 0, 0);
+}
+
+.fancy:hover::before {
+  width: 0.9375rem;
+  background: white;
+}
+
+.fancy:hover .text {
+  color: white;
+  padding-left: 1.5em;
+}
+
+.fancy:hover .top_key {
+  left: -2px;
+  width: 0px;
+}
+
+.fancy:hover .btn1,
+.fancy:hover .btn2 {
+  right: 0;
+  width: 0;
+}
+
+/*! CARD */
+.slash {
+  width: 100%;
+  border-bottom: 1px solid #e8e8e8;
+}
+.card {
+  display: flex;
+  width: 600px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.divImage {
+  width: 200px;
+  height: 300px;
+  margin-right: 30px;
+}
+.image {
+  width: 200px;
+  height: 300px;
+  border-radius: 8px;
+}
+.title {
+  height: 83px;
+  width: 344px;
+  font-weight: 700;
+  color: #121212;
+  font-size: 32px;
+  line-height: 40px;
+  margin-top: 10px;
+}
+.inform {
+  width: 350px;
+  padding: 20px;
+}
+.icons {
+  width: 350px;
+  height: 50px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  display: flex;
+}
+.icon {
+  width: 150px;
+  padding-right: 10px;
+  padding-left: 10px;
+  align-items: center;
+  border-right: 1px solid #e8e8e8;
+  border-left: 1px solid #e8e8e8;
+
+  align-items: center;
+}
+.head {
+  display: flex;
+  color: rgba(18, 18, 18, 0.64);
+  font-size: 12px;
+  line-height: 16px;
+}
+.like {
+  font-size: 14px;
+  margin-top: 1px;
+  margin-left: 3px;
+}
+.icon span {
+  color: #121212;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 20px;
+  align-items: center;
+  text-align: center;
+}
+.count {
+  width: 80px;
+  text-align: center;
+  margin: auto;
+}
+.logo {
+  font-size: 16px;
+  margin-top: 1px;
+}
+/*! reading_field */
+.main {
+  width: 100%;
+}
+.content {
+  width: 1100px;
+  margin: auto;
+  display: flex;
+  margin-top: 20px;
+}
+.sidebar {
+  width: 200px;
+  padding-top: 30px;
+}
+.reading_field {
+  width: 900px;
+}
+.reading_field h1 {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e8e8e8;
+  width: 800px;
+  margin: auto;
+}
+.readPage {
+  text-align: justify;
+  padding: 10px 30px;
+}
+.avatar {
+  font-size: 70px;
+  text-align: center;
+}
+.name {
+  text-align: center;
+  font-size: 25px;
+}
+.name span {
+  font-weight: 700;
+}
+
+/*! COMMENT POST  */
+.comments_render {
+  width: 900px;
+  margin: auto;
+}
+.render_field {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+}
+
+.comments_field textarea {
+  width: 775px;
+  margin: 0 10px;
+  resize: vertical;
+  padding: 15px 15px;
+  color: #6f6f6f;
+  line-height: 20px;
+  box-shadow: none;
+  height: 130px;
+  outline: none;
+  border-color: #e8e8e8;
+}
+.image_config {
+  width: 50px;
+  border-radius: 50%;
+  height: 50px;
+  padding: 3px;
+}
+.comments_field label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.comments_field button {
+  height: 35px;
+  padding: 5px 15px;
+  font-size: 15px;
+  line-height: 18px;
+  border-radius: 6px;
+  color: #fff;
+  background-color: #ff6122;
+  font-weight: 600;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 2px solid transparent;
+  float: right;
+  margin: 5px 15px;
+}
+.comments_field button:hover {
+  color: rgb(227, 227, 227);
+  background-color: #9e3b14;
+}
+
+/*! COMMENT  */
+.comment_user {
+  width: 830px;
+  margin: auto;
+  padding: 10px;
+  padding-left: 30px
+}
+.header_comment_user {
+  display: flex;
+  width: 790px;
+  justify-content: space-between;
+}
+.image_comment_user .avatar_comment_user {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  float: left;
+  margin-top: 5px;
+}
+.name_and_data_comment_user {
+  margin-left: 10px;
+  flex: 1;
+}
+.name_comment_user {
+  font-weight: 600;
+  color: #222;
+  align-items: center;
+  margin-right: 8px;
+}
+.data_comment_user {
+  font-size: 12px;
+  color: #6f6f6f;
+  line-height: 18px;
+}
+.delete_btn_comment_user {
+  float: right;
+  font-size: 20px;
+}
+.delete_btn_comment_user:hover {
+  color: black;
+  
+}
+.text_comment_user {
+  text-align: justify;
+  width: 710px;
+  padding: 5px 0;
+  margin: auto;
+}
