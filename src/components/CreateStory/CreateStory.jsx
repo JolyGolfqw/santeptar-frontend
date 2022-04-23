@@ -20,6 +20,8 @@ export default function CreateStory() {
   const [tag, setTag] = useState("");
   const [tags, setTags] = useState([]);
 
+  console.log(title, desc, tags, chars)
+
   const handleTitle = (e) => {
     setTitle(e.target.value);
   };
@@ -47,7 +49,6 @@ export default function CreateStory() {
   const addTags = () => {
     setTags([...tags, tag]);
   };
-  console.log(chars);
   const categories = useSelector((state) => state.categories.items);
 
   useEffect(() => {

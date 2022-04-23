@@ -51,11 +51,11 @@ export const loadBooks = () => {
 export const postBook = (
   file,
   title,
-  text,
+  description,
   chars,
   tags,
-  description,
   category,
+  text,
   author
 
 ) => {
@@ -66,8 +66,8 @@ export const postBook = (
       formData.append("img", file);
       formData.append("title", title);
       formData.append("description", description);
+      formData.append('mainCharacters', chars)
       formData.append("category", category);
-    formData.append('mainCharacters', chars)
     formData.append('tags', tags)
     formData.append("text", text);
     formData.append("author", author);

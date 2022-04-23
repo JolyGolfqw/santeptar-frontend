@@ -18,8 +18,7 @@ export default function HistoryText({ title, desc, chars, photo, tags, category,
   const dispatch = useDispatch();
 
   const handlePublish = () => {
-    dispatch(postBook(photo, title, text, desc, chars, tags, category, author));
-    console.log(category);
+    dispatch(postBook(photo, title, desc, chars, tags, category,text, author));
   };
 
   return (
