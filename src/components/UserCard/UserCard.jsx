@@ -12,7 +12,10 @@ const UserCard = () => {
   const [preview, setPreview] = useState("");
   const [show, setShow] = useState(false);
 
-  const user = useSelector((state) => state.users.items);
+  const users = useSelector((state) => state.users.items);
+  const signUser = useSelector((state) => state.application.user);
+
+  const currentUser = users.find((item) => item._id === signUser);
 
   useEffect(() => {
     dispatch(loadUsers());
@@ -27,11 +30,7 @@ const UserCard = () => {
     }
   }, [dispatch, photo]);
 
-  const signUser = localStorage.getItem("user");
-
-  const currentUser = user.find((item) => item._id === signUser);
-  //   console.log(currentUser);
-
+  console.log(currentUser);
 
   const handleUpdateAvatar = () => {
     dispatch(editAvatar(photo, currentUser._id));
@@ -39,18 +38,21 @@ const UserCard = () => {
 
   const defaultAvatar =
     "https://abrakadabra.fun/uploads/posts/2021-12/thumbs/1640528649_39-abrakadabra-fun-p-serii-chelovek-na-avu-44.jpg";
-//   const userAvatar = `http://localhost:4000/${currentUser.avatar}`;
-//   console.log(currentUser.avatar)
+  //   const userAvatar = `http://localhost:4000/${currentUser.avatar}`;
+  //   console.log(currentUser.avatar)
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.imageWrapper}>
         <img
-            src={currentUser ? `http://localhost:4000/${currentUser.avatar}` : defaultAvatar}
+          src={
+            currentUser
+              ? `http://localhost:4000/${currentUser.avatar}`
+              : defaultAvatar
+          }
           alt="book"
         />
         <h4>{currentUser ? currentUser.name : ""}</h4>
         <button onClick={() => setOpened(!opened)}>
-
           <ion-icon name="ellipsis-horizontal-circle-outline"></ion-icon>
         </button>
         {opened && (

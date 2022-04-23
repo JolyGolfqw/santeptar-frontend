@@ -8,6 +8,8 @@ export default function HistoryText({ title, desc, chars, photo, tags, category,
   const [fullscreen, setFullscreen] = useState(true);
 
   const [text, setText] = useState("");
+  const author = localStorage.getItem('user')
+  console.log(author)
 
   const handleText = (e) => {
     setText(e.target.value);
@@ -16,7 +18,7 @@ export default function HistoryText({ title, desc, chars, photo, tags, category,
   const dispatch = useDispatch();
 
   const handlePublish = () => {
-    dispatch(postBook(photo, title, text, desc, chars, tags, category));
+    dispatch(postBook(photo, title, text, desc, chars, tags, category, author));
     console.log(category);
   };
 

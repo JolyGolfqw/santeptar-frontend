@@ -56,6 +56,7 @@ export const postBook = (
   tags,
   description,
   category,
+  author
 
 ) => {
   return async (dispatch) => {
@@ -69,6 +70,8 @@ export const postBook = (
     formData.append('mainCharacters', chars)
     formData.append('tags', tags)
     formData.append("text", text);
+    formData.append("author", author);
+
       // formData.append('condition', condition)
     //   formData.append("author", author);
       const res = await fetch(`http://localhost:4000/books`, {
