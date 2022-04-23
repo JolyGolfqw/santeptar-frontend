@@ -112,7 +112,6 @@ export default function CreateStory() {
           <div className={style.funcional}>
             <div className={style.title}>
               <h5>Title </h5>
-              <input type="text" placeholder="Untitled Story" />
               <input
                 value={title}
                 onChange={(e) => handleTitle(e)}
