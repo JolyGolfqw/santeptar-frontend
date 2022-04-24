@@ -9,7 +9,6 @@ export default function HistoryText({ title, desc, chars, photo, tags, category,
 
   const [text, setText] = useState("");
   const author = localStorage.getItem('user')
-  console.log(author)
 
   const handleText = (e) => {
     setText(e.target.value);

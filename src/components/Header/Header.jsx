@@ -37,7 +37,7 @@ const Header = () => {
   const showCategories = () => {
     return navigate("/categories");
   };
-
+  
   const showMainPage = () => {
     return navigate("/");
   };

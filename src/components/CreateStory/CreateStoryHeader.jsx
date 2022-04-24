@@ -6,7 +6,6 @@ import HistoryText from "./HistoryText";
 
 export default function CreateStoryHeader({title, desc, photo, chars, tags, category}) {
   const navigate = useNavigate();
-  console.log(title, desc, tags, chars)
 
 
   const [opened, setOpened] = useState(false);

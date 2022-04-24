@@ -28,7 +28,9 @@ export default function Signin(props) {
       return alert("Заполните все поля");
     }
     dispatch(auth(login, password));
-
+    setTimeout(() => {
+      window.location.reload()
+    }, 500)
   };
   return (
     <Modal
@@ -60,7 +62,7 @@ export default function Signin(props) {
               <input
                 value={password}
                 onChange={(e) => handlePassword(e)}
-                type="text"
+                type="password"
                 className="form-control"
                 id="floatingInput"
                 placeholder="name@example.com"
