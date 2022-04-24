@@ -5,7 +5,6 @@ import style from "../SingleBookRead/singleBookRead.module.css";
 
 const Comment = (props) => {
   const { element, comments } = props;
-console.log(element)
 	const dispatch = useDispatch();
 
   const userId = useSelector((state) => state.application.user);

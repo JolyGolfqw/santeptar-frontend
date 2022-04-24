@@ -94,7 +94,6 @@ export const addComment = (comment, bookId, user) => {
         body: JSON.stringify({ text: comment, books: bookId, user }),
       });
       const json = await res.json();
-      console.log(json);
       dispatch({ type: "comments/post/fulfilled", payload: json });
     } catch (err) {
       dispatch({ type: "comments/post/rejected", error: err.toString() });

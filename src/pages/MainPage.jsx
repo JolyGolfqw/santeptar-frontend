@@ -13,7 +13,6 @@ const randomOne = Math.floor(Math.random(0, 12) * 10)
 const randomTwo = Math.floor(Math.random(0, 12) * 10) 
 const randomThree = Math.floor(Math.random(0, 12) * 10) 
 
-console.log(books)
   return (
     <>
       <div className="firstSection">
