@@ -21,7 +21,7 @@ const ModalBookDesc = (props) => {
             }}
           >
             <div className={styles.modal_image}>
-              <img src={item.img} alt="img"></img>
+              <img src={`http://localhost:4000/${item.img}`} alt="img"></img>
             </div>
             <div style={{ marginLeft: 20 }}>
               <h3>{item.title}</h3>

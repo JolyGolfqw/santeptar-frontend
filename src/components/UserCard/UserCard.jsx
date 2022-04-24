@@ -2,23 +2,47 @@ import React, { useEffect, useState } from "react";
 import "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js";
 import styles from "./userCard.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { editAvatar, editProfile, loadUsers } from "../../redux/features/users";
+import { editAvatar, editProfile, loadUsers, subscribe, unSubscribe } from "../../redux/features/users";
 import UserInfo from "./UserInfo";
+import { useParams } from "react-router-dom";
+import { loadBooks } from "../../redux/features/books";
+
 
 const UserCard = () => {
+  const {id} = useParams()
+  const users = useSelector((state) => state.users.items);
+  const books = useSelector((state) => state.books.items);
+  const signUser = useSelector((state) => state.application.user);
+
+  console.log(books)
+
   const dispatch = useDispatch();
+
   const [photo, setPhoto] = useState("");
   const [opened, setOpened] = useState(false);
   const [preview, setPreview] = useState("");
   const [show, setShow] = useState(false);
+  
+  const handleUpdateAvatar = () => {
+    dispatch(editAvatar(photo, signUser));
+    setTimeout(() =>{
+      window.location.reload()
 
-  const users = useSelector((state) => state.users.items);
-  const signUser = useSelector((state) => state.application.user);
+    }, 1000)
+  };
 
-  const currentUser = users.find((item) => item._id === signUser);
+  const handleSubscribe = () => {
+    dispatch(subscribe(signUser, id))
+  }
+
+  const handleUnSubscribe = () => {
+    dispatch(unSubscribe(signUser, id))
+  }
+
 
   useEffect(() => {
     dispatch(loadUsers());
+    dispatch(loadBooks())
     if (photo) {
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -30,28 +54,29 @@ const UserCard = () => {
     }
   }, [dispatch, photo]);
 
-  console.log(currentUser);
+  const userBooks = books.filter(item => item.author._id === id)
+  const lastBook = userBooks[userBooks.length - 1]
 
-  const handleUpdateAvatar = () => {
-    dispatch(editAvatar(photo, currentUser._id));
-  };
+
 
   const defaultAvatar =
     "https://abrakadabra.fun/uploads/posts/2021-12/thumbs/1640528649_39-abrakadabra-fun-p-serii-chelovek-na-avu-44.jpg";
   //   const userAvatar = `http://localhost:4000/${currentUser.avatar}`;
   //   console.log(currentUser.avatar)
-  return (
-    <div className={styles.cardWrapper}>
+  return users.length > 0 && users.map(item => {
+    if (item._id === id) {
+      return (
+        <div key={item._id} className={styles.cardWrapper}>
       <div className={styles.imageWrapper}>
         <img
           src={
-            currentUser
-              ? `http://localhost:4000/${currentUser.avatar}`
+            item.avatar 
+              ? `http://localhost:4000/${item.avatar}`
               : defaultAvatar
           }
           alt="book"
         />
-        <h4>{currentUser ? currentUser.name : ""}</h4>
+        <h4>{item.name}</h4>
         <button onClick={() => setOpened(!opened)}>
           <ion-icon name="ellipsis-horizontal-circle-outline"></ion-icon>
         </button>
@@ -83,25 +108,26 @@ const UserCard = () => {
           </div>
         )}
       </div>
+      
       <div className={styles.descWrapper}>
         <div className={styles.descAndButton}>
           <h4>Описание</h4>
-          <button>Подписаться</button>
+          {signUser !== id ? item.followers.find(item => item === signUser) ? <button onClick={handleUnSubscribe}>Отписаться</button> : <button onClick={handleSubscribe}>Подписаться</button> : null }
         </div>
         <div className={styles.userDesc}>
-          <p>{currentUser ? currentUser.description : ""}</p>
+          <p>{item.description}</p>
         </div>
         <div className={styles.lastBook}>
           <div className={styles.lastBookWrapper}>
             <img
-              src="https://fkniga.ru/media/product/04/040401/KA-00241064.jpg"
+              src={userBooks.length > 0 && `http://localhost:4000/${lastBook.img}`}
               alt="books"
             />
           </div>
           <div className={styles.lastBookText}>
             <h6>
               <span className={styles.lastText}>Последняя книга: </span>
-              <span className={styles.bookName}>Десять негритят</span>
+              <span className={styles.bookName}>{userBooks.length > 0 && lastBook.title}</span>
             </h6>
           </div>
           <div className={styles.date}>
@@ -110,21 +136,24 @@ const UserCard = () => {
         </div>
         <div className={styles.buttons}>
           <div className={styles.works}>
-            <h6>2 книги</h6>
+            <h6>{userBooks.length} книги</h6>
           </div>
           <div className={styles.subs}>
-            <h6>15 подписчиков</h6>
+            <h6>{item.followers.length} подписчиков</h6>
           </div>
         </div>
       </div>
       <UserInfo
-        desc={currentUser ? currentUser.description : ""}
+        desc={item.description}
         id={signUser}
         show={show}
         onHide={() => setShow(false)}
       />
     </div>
-  );
+      )
+      
+    }
+  }) 
 };
 
 export default UserCard;
