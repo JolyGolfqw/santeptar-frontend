@@ -3,7 +3,6 @@ import { NavItem } from "react-bootstrap";
 import styles from "./bigCard.module.css";
 
 const BigCard = ({img, title, description}) => {
-  console.log(img, title, description)
   return (
     <div className={styles.bigCard}>
       <div className={styles.bigCardBasis}>

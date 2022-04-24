@@ -21,10 +21,16 @@ const CategotyLinkPage = () => {
     }
   });
 
+  console.log(filtered)
+
   return (
     <div className={styles.content}>
       <Header />
-      <h1>{`${(filtered)} Истории`}</h1>
+      {categories.map(item => {
+        if (item._id === id) {
+          return <h1>{`${item.name} Истории`}</h1>
+        }
+      })}
       <div className={styles.container}>
         <span>Уточнить по тегу:</span>
         <div className={styles.tags}>
