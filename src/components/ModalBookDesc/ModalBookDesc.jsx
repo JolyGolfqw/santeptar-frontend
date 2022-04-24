@@ -1,8 +1,6 @@
 import React from "react";
 import styles from "../ModalBookDesc/modalbookdesc.css";
 import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
-import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 
@@ -11,7 +9,12 @@ const ModalBookDesc = (props) => {
 
   return (
     <div>
-      <Modal size="lg" show={openModal} onHide={() => setOpenModal(false)} centered>
+      <Modal
+        size="lg"
+        show={openModal}
+        onHide={() => setOpenModal(false)}
+        centered
+      >
         <Modal.Body>
           <div
             className={styles.content}
@@ -21,11 +24,15 @@ const ModalBookDesc = (props) => {
             }}
           >
             <div className={styles.modal_image}>
-              <img src={`http://localhost:4000/${item.img}`} alt="img"></img>
+              <img
+                style={{ width: 250, height: 390 }}
+                src={`http://localhost:4000/${item.img}`}
+                alt="img"
+              ></img>
             </div>
             <div style={{ marginLeft: 20 }}>
               <h3>{item.title}</h3>
-              <div className='endedStories'>
+              <div className="endedStories">
                 <h5>Завершенная история</h5>
               </div>
               <div className="info">
@@ -48,7 +55,9 @@ const ModalBookDesc = (props) => {
                   <h6>5 мин</h6>
                 </div>
               </div>
-              <div style={{ marginTop: 10 }}>{item.description}</div>
+              <div style={{ marginTop: 10, height: 165 }}>
+                {item.description.substr(0, 350) + "..."}
+              </div>
               <button
                 className="learn-more"
                 style={{ marginTop: 10, marginLeft: 280 }}
@@ -56,7 +65,9 @@ const ModalBookDesc = (props) => {
                 <span className="circle" aria-hidden="true">
                   <span className="icon arrow"></span>
                 </span>
-                <Link to={`/book/${item._id}`}><span className="button-text">Начать читать</span></Link>
+                <Link to={`/book/${item._id}`}>
+                  <span className="button-text">Начать читать</span>
+                </Link>
               </button>
             </div>
           </div>

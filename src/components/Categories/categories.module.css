@@ -6,3 +6,11 @@
   margin-left: 120px;
 	margin-bottom: 30px;
 }
+.category {
+  text-decoration: none;
+  outline: none;
+  color: black;
+}
+.category:hover {
+  color: black;
+}

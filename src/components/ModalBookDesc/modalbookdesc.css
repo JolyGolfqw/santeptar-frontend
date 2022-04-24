@@ -1,17 +1,14 @@
-img {
-  width: 250px;
-  height: 390px;
-}
 .condition {
-    border-radius: 15px;
-    background-color: green;
-    width: 200px;
-    font-weight: bolder;
-    text-align: center;
-    color: white;
-    padding: 5px;
-    margin-top: 20px;
+  border-radius: 15px;
+  background-color: green;
+  width: 200px;
+  font-weight: bolder;
+  text-align: center;
+  color: white;
+  padding: 5px;
+  margin-top: 20px;
 }
+
 
 button {
   position: relative;
@@ -102,43 +99,46 @@ button:hover .button-text {
 }
 
 .info {
-	display: flex;
-	margin: 15px 0px 10px 0px;
+  display: flex;
+  margin: 15px 0px 10px 0px;
 }
 
-.likes, .time {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+.likes,
+.time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.likesIcon, .bookIcon {
-	display: flex;
+.likesIcon,
+.bookIcon {
+  display: flex;
 }
 
-.likesIcon div, .bookIcon div {
-	margin-right: 10px;
-	font-size: 20px;
+.likesIcon div,
+.bookIcon div {
+  margin-right: 10px;
+  font-size: 20px;
 }
 
 .likes {
-	margin-right: 25px;
-	border-right: 1px solid gray;
-	padding-right: 25px;
+  margin-right: 25px;
+  border-right: 1px solid gray;
+  padding-right: 25px;
 }
 
 .endedStories {
-	text-align: center;
-	width: 42%;
-	background-color: #008000;
-	color: white;
-	padding: 5px;
-	padding-bottom: 7px;
-	border-radius: 15px;
-	margin: 15px 0px;
+  text-align: center;
+  width: 42%;
+  background-color: #008000;
+  color: white;
+  padding: 5px;
+  padding-bottom: 7px;
+  border-radius: 15px;
+  margin: 15px 0px;
 }
 
 .endedStories h5 {
-	font-size: 15px;
-	margin: 0;
+  font-size: 15px;
+  margin: 0;
 }

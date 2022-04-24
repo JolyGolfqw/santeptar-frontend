@@ -4,7 +4,7 @@ import styles from "./categories.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { loadCategories } from "../../redux/features/categories";
 import { useEffect } from "react";
-
+import { Link } from "react-router-dom";
 const Categories = () => {
   const categories = useSelector((state) => state.categories.items);
   const error = useSelector((state) => state.error);
@@ -25,7 +25,15 @@ const Categories = () => {
   return (
     <div className={styles.category_content}>
       {categories.map((item) => {
-        return <CategoryCard item={item} key={item._id} />
+        return (
+          <Link
+            key={item._id}
+            className={styles.category}
+            to={`/render/category/${item._id}`}
+          >
+            <CategoryCard item={item} />
+          </Link>
+        );
       })}
     </div>
   );
