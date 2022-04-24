@@ -15,13 +15,6 @@ const CategotyLinkPage = () => {
     dispatch(loadCategories());
   }, [dispatch]);
 
-  const filtered = categories.find((element) => {
-    if (id === element._id) {
-      return element.name;
-    }
-  });
-
-  console.log(filtered)
 
   return (
     <div className={styles.content}>
@@ -123,7 +116,11 @@ const CategotyLinkPage = () => {
       <div className={styles.booksRender}>
         <div className={styles.booksRenderHeader}>
           <div className={styles.booksLength}>
-            {`${filtered} Истории`}
+          {categories.map(item => {
+        if (item._id === id) {
+          return <span>{`${item.name} Истории`}</span>
+        }
+      })}
           </div>
           <div className={styles.sort}>
             Сортировка по:
