@@ -5,7 +5,9 @@ const initialState = {
     errorSingnIn: null,
     token: localStorage.getItem("token"),
     user: localStorage.getItem("user"),
-    userName: localStorage.getItem('name')
+    userName: localStorage.getItem('name'),
+    avatar: localStorage.getItem('avatar')
+
   };
   
   export default function application(state = initialState, action) {
@@ -51,6 +53,8 @@ const initialState = {
           localStorage.setItem("token", json.token);
           localStorage.setItem("user", json.id);
           localStorage.setItem("name", json.name);
+          localStorage.setItem("avatar", json.avatar);
+
 
         }
       } catch (err) {

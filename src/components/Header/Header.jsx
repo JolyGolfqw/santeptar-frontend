@@ -5,12 +5,22 @@ import { useState, useEffect } from "react";
 import Signin from "../Signin/Signin";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { Provider, useDispatch, useSelector } from "react-redux";
 import { loadCategories } from "../../redux/features/categories";
 import "bootstrap/dist/css/bootstrap.min.css";
+import ProfileModal from "./ProfileModal";
 
 const Header = () => {
   const [genresModal, setGenresModal] = useState(false);
+  const [profile, setProfile] = useState(false);
+
+
+  const userName = useSelector((state) => state.application.userName);
+  const user = useSelector((state) => state.application.user);
+  const token = useSelector((state) => state.application.token);
+  const avatar = useSelector((state) => state.application.avatar);
+
+
 
   const handleClick = () => {
     setGenresModal(!genresModal);
@@ -26,6 +36,8 @@ const Header = () => {
   const showCategories = () => {
     return navigate("/categories");
   };
+
+  console.log(profile)
 
   const showMainPage = () => {
     return navigate("/");
@@ -63,22 +75,35 @@ const Header = () => {
             Создать
           </div>
         </div>
-        <div className={styles.mainUser}>
-          <img
-            src="https://cdn-icons-png.flaticon.com/128/482/482636.png"
-            alt="avatar"
-            className={styles.avatar}
-          ></img>
-          <div onClick={() => setOpened(!opened)} className={styles.user}>
-            User
-          </div>
+        {token ?
+        <div onClick={() => setProfile(!profile)} className={styles.mainUser}>
+        <img
+          src={`http://localhost:4000/${avatar}`}
+          alt="avatar"
+          className={styles.avatar}
+        ></img>
+        <div className={styles.user}>
+          {userName}
         </div>
+      </div>
+      
+      :
+
+      <div onClick={() => setOpened(!opened)} className={styles.mainUser}>
+          Войти
+        </div>
+        }
+        
       </div>
       <Signin show={opened} onHide={() => setOpened(false)} />
       {genresModal && <GenresModal />}
+      {profile && <ProfileModal id={user}/>}
+
     </div>
   );
 };
+
+
 
 const GenresModal = () => {
   const dispatch = useDispatch();

@@ -23,7 +23,7 @@ const App = () => {
           <Route path="/" element={<MainPage />} />
           <Route path="/myworks/new" element={<BookAddingPage />} />
           <Route path="/categories" element={<CategoriesPage />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/:id" element={<Profile />} />
           <Route path="/render/category" element={<CategotyLinkPage />} />
 					<Route path="/searchbooks" element={<SearchBooksPage />} />
           <Route path="/book/:id" element={<SingleBookRead/>} />
