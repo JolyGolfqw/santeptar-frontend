@@ -14,7 +14,6 @@ const UserCard = () => {
   const books = useSelector((state) => state.books.items);
   const signUser = useSelector((state) => state.application.user);
 
-  console.log(books)
 
   const dispatch = useDispatch();
 
@@ -22,15 +21,17 @@ const UserCard = () => {
   const [opened, setOpened] = useState(false);
   const [preview, setPreview] = useState("");
   const [show, setShow] = useState(false);
+
+  const ava = `images/${photo.name}`
   
   const handleUpdateAvatar = () => {
     dispatch(editAvatar(photo, signUser));
+    localStorage.setItem('avatar', ava)
     setTimeout(() =>{
       window.location.reload()
 
-    }, 1000)
+    }, 500)
   };
-
   const handleSubscribe = () => {
     dispatch(subscribe(signUser, id))
   }
@@ -62,7 +63,6 @@ const UserCard = () => {
   const defaultAvatar =
     "https://abrakadabra.fun/uploads/posts/2021-12/thumbs/1640528649_39-abrakadabra-fun-p-serii-chelovek-na-avu-44.jpg";
   //   const userAvatar = `http://localhost:4000/${currentUser.avatar}`;
-  //   console.log(currentUser.avatar)
   return users.length > 0 && users.map(item => {
     if (item._id === id) {
       return (
@@ -70,9 +70,9 @@ const UserCard = () => {
       <div className={styles.imageWrapper}>
         <img
           src={
-            item.avatar 
-              ? `http://localhost:4000/${item.avatar}`
-              : defaultAvatar
+            preview
+            ? preview
+              : `http://localhost:4000/${item.avatar}`
           }
           alt="book"
         />

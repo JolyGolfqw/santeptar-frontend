@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import { loadBooks } from "../../redux/features/books";
 import style from "../SingleBookRead/singleBookRead.module.css";
@@ -23,7 +23,6 @@ const SingleBookRead = () => {
     if (item._id === id) {
       return (
         <>
-        {console.log(item)}
           <Header />
           {/* bookname */}
           <div className={style.slash}>
@@ -85,7 +84,7 @@ const SingleBookRead = () => {
                   <ion-icon name="logo-github"></ion-icon>
                 </div>
                 <div className={style.name}>
-                  by <span>{item.author.name}</span>
+                  by <span><Link to={`/profile/${item.author._id}`}>{item.author.name}</Link></span>
                 </div>
                 <div className={style.follovers}></div>
               </div>

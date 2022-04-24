@@ -8,24 +8,28 @@ import WhileReadingCarousel from "../../components/WhileReading/WhileReadingCaro
 import { useDispatch, useSelector } from "react-redux";
 import { loadUsers } from "../../redux/features/users";
 import { useParams } from "react-router-dom";
+import { loadBooks } from "../../redux/features/books";
 
 
 const Profile = () => {
 
   const dispatch = useDispatch()
+  const {id} = useParams()
 
   useEffect(() => {
     dispatch(loadUsers())
+    dispatch(loadBooks())
   }, [dispatch])
 
-  const users = useSelector(state => state.users.items)
-console.log(users)
-  const {id} = useParams()
 
+
+  const users = useSelector(state => state.users.items)
+  const books = useSelector(state => state.books.items)
+
+  const userBooks = books.filter(item => item.author._id === id)
 
   return users.length > 0 && users.map(item => {
     if (item._id === id) {
-      console.log(item)
       return (
         <>
           <div className={styles.firstSection}>
@@ -36,9 +40,14 @@ console.log(users)
           </div>
           <div className={styles.userStories}>
             <h1>{`Истории от ${item.name}`}</h1>
-            <p>2 опубликованных работ</p>
-            <BigCard />
-            <BigCard />
+            <p>{userBooks.length} опубликованных работ</p>
+            {books.map(book => {
+              if (book.author._id === id) {
+                console.log(book.author)
+                return <BigCard img={book.img} title={book.title} description={book.description}/>
+
+              }
+            })}
           </div>
           <div className={styles.userReadingBook}>
             <h1>{`Что читает ${item.name}`}</h1>
