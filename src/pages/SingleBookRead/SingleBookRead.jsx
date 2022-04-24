@@ -3,26 +3,31 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import { loadBooks } from "../../redux/features/books";
+import { getComments } from "../../redux/features/comments";
+import { loadUsers } from "../../redux/features/users";
 import style from "../SingleBookRead/singleBookRead.module.css";
 import CommentPost from "./CommentPost";
 const SingleBookRead = () => {
 
+	const { id } = useParams()
+
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(loadBooks())
+    dispatch(loadBooks());
+		dispatch(getComments());
+		dispatch(loadUsers())
   }, [dispatch])
 
   const books = useSelector((state) => state.books.items);
-
-  const { id } = useParams()
-
-
+	const comments = useSelector(state => state.comments.comments)
+	const commentsCount = comments.filter((element) => element.books === id)
 
   return books.map(item => {
+		
     if (item._id === id) {
       return (
-        <>
+        <div key={item._id}>
           <Header />
           {/* bookname */}
           <div className={style.slash}>
@@ -63,13 +68,13 @@ const SingleBookRead = () => {
                       </div>
                       <div className={style.like}>Комментарии</div>
                     </div>
-                    <div className={style.count}>52</div>
+                    <div className={style.count}>{commentsCount.length}</div>
                   </div>
                 </div>
                 {/* BUTTON  */}
                 <a className={style.fancy} href="#">
                   <span className={style.top_key}></span>
-                  <span className={style.text}>История завершена</span>
+                  <span className={style.text}>{item.condition ? 'История завершена' : 'История не завершена'}</span>
                   <span className={style.btn1}></span>
                   <span className={style.btn2}></span>
                 </a>
@@ -81,7 +86,7 @@ const SingleBookRead = () => {
             <div className={style.content}>
               <div className={style.sidebar}>
                 <div className={style.avatar}>
-                  <ion-icon name="logo-github"></ion-icon>
+                  <img src={`http://localhost:4000/${item.author.avatar}`} alt="avatar-by" />
                 </div>
                 <div className={style.name}>
                   by <span><Link to={`/profile/${item.author._id}`}>{item.author.name}</Link></span>
@@ -93,11 +98,11 @@ const SingleBookRead = () => {
                 <div className={style.readPage}>
                   {item.text}
                 </div>
-                <CommentPost />
+                <CommentPost id={id} comments={comments}/>
               </div>
             </div>
           </div>
-        </>
+        </div>
       );
     }
   })

@@ -212,10 +212,16 @@
   text-align: justify;
   padding: 10px 30px;
 }
-.avatar {
-  font-size: 70px;
-  text-align: center;
+.avatar img {
+  width: 60px;
+	height: 60px;
+	object-fit: cover;
 }
+
+.avatar {
+	text-align: center;
+}
+
 .name {
   text-align: center;
   font-size: 25px;
@@ -252,6 +258,7 @@
   border-radius: 50%;
   height: 50px;
   padding: 3px;
+	object-fit: cover;
 }
 .comments_field label {
   position: absolute;
