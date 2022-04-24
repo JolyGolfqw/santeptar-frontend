@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import { loadBooks } from "../../redux/features/books";
 import { getComments } from "../../redux/features/comments";
@@ -89,7 +89,7 @@ const SingleBookRead = () => {
                   <img src={`http://localhost:4000/${item.author.avatar}`} alt="avatar-by" />
                 </div>
                 <div className={style.name}>
-                  by <span>{item.author.name}</span>
+                  by <span><Link to={`/profile/${item.author._id}`}>{item.author.name}</Link></span>
                 </div>
                 <div className={style.follovers}></div>
               </div>

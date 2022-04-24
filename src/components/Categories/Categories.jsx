@@ -10,7 +10,6 @@ const Categories = () => {
   const error = useSelector((state) => state.error);
   const loading = useSelector((state) => state.loading);
   const dispatch = useDispatch();
-  console.log(categories)
 
   useEffect(() => {
     dispatch(loadCategories());

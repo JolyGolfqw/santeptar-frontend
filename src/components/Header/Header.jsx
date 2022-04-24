@@ -37,7 +37,6 @@ const Header = () => {
     return navigate("/categories");
   };
 
-  console.log(profile)
 
   const showMainPage = () => {
     return navigate("/");

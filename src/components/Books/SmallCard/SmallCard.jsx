@@ -8,7 +8,6 @@ const SmallCard = ({ item }) => {
 
   const handleClick = (id) => {
 		setOpenModal(!openModal)
-    console.log(item);
   };
 
   return (
