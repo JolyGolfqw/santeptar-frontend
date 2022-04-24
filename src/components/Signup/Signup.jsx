@@ -34,7 +34,6 @@ export default function Signup() {
     }
    await dispatch(createUser(login, password, userName));
     if (!error) {
-        console.log('aaaa')
        await dispatch(auth(login, password))
     }
   };

@@ -17,6 +17,10 @@ const userDesc = desc
 
   const editDesc = () => {
     dispatch(editProfile(text, id))
+    setTimeout(() =>{
+      window.location.reload()
+
+    }, 500)
   }
 
   return (

@@ -79,7 +79,6 @@ export const postBook = (
         body: formData,
       });
       const data = await res.json();
-      console.log(data);
 
       dispatch({ type: "books/post/fulfilled", payload: data });
     } catch (error) {
