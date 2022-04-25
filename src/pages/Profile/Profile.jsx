@@ -35,7 +35,7 @@ const Profile = () => {
           <div className={styles.firstSection}>
             <Header />
             <div className={styles.userInfo}>
-              <UserCard />
+              <UserCard dude={item}/>
             </div>
           </div>
           <div className={styles.userStories}>
@@ -43,8 +43,7 @@ const Profile = () => {
             <p>{userBooks.length} опубликованных работ</p>
             {books.map(book => {
               if (book.author._id === id) {
-                console.log(book.author)
-                return <BigCard img={book.img} title={book.title} description={book.description}/>
+                return <BigCard img={book.img} bookId={book._id} title={book.title} description={book.description}/>
 
               }
             })}

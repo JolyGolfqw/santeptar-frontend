@@ -53,9 +53,9 @@
 .endedStories {
 	text-align: center;
 	width: 35%;
-	background-color: #008000;
+	background-color: #198754;
 	color: white;
-	padding: 5px;
+	padding: 10px;
 	padding-bottom: 7px;
 	border-radius: 15px;
 }
@@ -90,5 +90,13 @@
 	margin-right: 25px;
 	border-right: 1px solid gray;
 	padding-right: 25px;
+}
+
+.btnContainer {
+	display: flex;
+}
+
+.readBook {
+	width: 100px;
 }
 
