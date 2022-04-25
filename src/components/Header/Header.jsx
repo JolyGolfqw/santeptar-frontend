@@ -41,7 +41,7 @@ const Header = () => {
   const showCategories = () => {
     return navigate("/categories");
   };
-  
+
   const showMainPage = () => {
     return navigate("/");
   };
@@ -51,29 +51,21 @@ const Header = () => {
       <div className={styles.header}>
         <div className={styles.headerMain}>
           <div className={styles.mainName} onClick={showMainPage}>
-            book reader
+            santeptar
           </div>
           <div className={styles.mainNav}>
-            <div className={styles.mainNavGenre} onClick={handleClick}>
-              <div className={styles.mainNavGenre}>Жанры
-              <div className={styles.arrow}>
-                <ion-icon name="chevron-down-outline"></ion-icon>
-              </div></div>
-              
+            <div className={styles.mainNavGenre}>
+              <div className={styles.mainNavGenre} onClick={showCategories}>
+                Жанры
+              </div>
+              <div className={styles.arrow} onClick={handleClick}>
+                <ion-icon name="chevron-down-outline" className={styles.icons1}></ion-icon>
+              </div>
             </div>
             <div className={styles.mainNavSearch}>
-              <div className={styles.mainNavButton}>
-                <ion-icon
-                  name="search-outline"
-                  onClick={showCategories}
-                ></ion-icon>
-
-                <div
-                  className={styles.mainNavGenre}
-                  onClick={hendleKeyPress}
-                >
-                  Поиск
-                </div>
+              <div className={styles.mainNavButton} onClick={hendleKeyPress}>
+                <ion-icon name="search-outline" className={styles.icons2}></ion-icon>
+                <div className={styles.mainNavGenre}>Поиск</div>
               </div>
             </div>
             <div className={styles.mainNavStr} onClick={createBook}>

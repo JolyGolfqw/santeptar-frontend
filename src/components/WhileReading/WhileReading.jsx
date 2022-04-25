@@ -8,15 +8,14 @@ const WhileReadingCard = () => {
         <div className={styles.image}>
           <img
             className={styles.image}
-            src="https://s0.rbk.ru/v6_top_pics/media/img/3/16/755954419776163.jpg"
+            src="https://cdn.eksmo.ru/v2/ITD000000001120693/COVER/cover1__w820.jpg"
             alt="img"
           ></img>
         </div>
         <div className={styles.descWrapper}>
-          <div className={styles.authorName}>Брайн Силвер</div>
+          <div className={styles.authorName}>Книжный вор</div>
           <div className={styles.description}>
-          А лидер ты или нет зависит от того чья мерила нормы является актуальной и
-           используемой всеми, а не от того что мужчина ты в семье или называешься императором в империи.
+          «Книжный вор» стал издательской сенсацией. Его тираж только на английском языке превысил 1,5 миллиона экземпляров. Роман уже несколько лет находится в Top-30 рейтинга крупнейшего в мире книжного магазина Amazon.com.
           </div>
 
           <div className={styles.btnRead}>

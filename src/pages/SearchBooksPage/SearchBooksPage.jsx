@@ -16,16 +16,16 @@ const SearchBooksPage = () => {
   const filteredBooks = books.filter((item) => {
     return item.title.toLowerCase().includes(value.toLowerCase());
   });
+  console.log(filteredBooks);
 
   useEffect(() => {
     dispatch(loadBooks());
   }, [dispatch]);
 
   return (
-    <>
+    <div style={{paddingTop: 25}}> 
       <Header />
 
-      
       <div className={styles.search}>
         <input
           type="text"
@@ -34,13 +34,20 @@ const SearchBooksPage = () => {
         />
       </div>
 
-      <div className={styles.small_card}>
-        {filteredBooks.map((item) => {
-          return <SmallCard item={item} key={item._id} />;
-        })}
-      </div>
+      {!filteredBooks.length ? (
+        <div className={styles.sector_clear}>
+          <h2>Ничего не найдено...</h2>
+        </div>
+      ) : (
+        <div className={styles.small_card}>
+          {filteredBooks.map((item) => {
+            return <SmallCard item={item} key={item._id} />;
+          })}
+        </div>
+      )}
+
       <Footer />
-    </>
+    </div>
   );
 };
 
