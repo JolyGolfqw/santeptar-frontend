@@ -126,6 +126,9 @@ button:hover .button-text {
   border-right: 1px solid gray;
   padding-right: 25px;
 }
+button a {
+  float: right;
+}
 
 .endedStories {
   text-align: center;

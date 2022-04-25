@@ -22,6 +22,10 @@
   align-content: space-around;
   justify-content: center;
 }
+img {
+  width: 260px;
+  height: 400px;
+}
 
 .img {
   width: 50px;

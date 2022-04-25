@@ -1,14 +1,25 @@
 import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { postBook } from "../../redux/features/books";
 import style from "./styles.module.css";
 
-export default function HistoryText({ title, desc, chars, photo, tags, category, show, onHide }) {
+export default function HistoryText({
+  title,
+  desc,
+  chars,
+  photo,
+  tags,
+  category,
+  show,
+  onHide,
+}) {
   const [fullscreen, setFullscreen] = useState(true);
+  const navigate = useNavigate()
 
   const [text, setText] = useState("");
-  const author = localStorage.getItem('user')
+  const author = localStorage.getItem("user");
 
   const handleText = (e) => {
     setText(e.target.value);
@@ -17,7 +28,8 @@ export default function HistoryText({ title, desc, chars, photo, tags, category,
   const dispatch = useDispatch();
 
   const handlePublish = () => {
-    dispatch(postBook(photo, title, desc, chars, tags, category,text, author));
+    dispatch(postBook(photo, title, desc, chars, tags, category, text, author));
+    navigate('/')
   };
 
   return (
@@ -30,11 +42,9 @@ export default function HistoryText({ title, desc, chars, photo, tags, category,
         aria-labelledby="example-custom-modal-styling-title"
       >
         <Modal.Header closeButton>
-          <Modal.Title>Modal</Modal.Title>
-          <Button onClick={handlePublish}>Опубликовать</Button>
+          <Modal.Title>История</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <input type="text" />
           <textarea
             value={text}
             onChange={(e) => handleText(e)}
@@ -43,6 +53,7 @@ export default function HistoryText({ title, desc, chars, photo, tags, category,
             cols="30"
             rows="10"
           ></textarea>
+          <Button onClick={handlePublish}>Опубликовать</Button>
         </Modal.Body>
       </Modal>
     </>

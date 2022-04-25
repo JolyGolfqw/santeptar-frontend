@@ -11,6 +11,8 @@
   border-bottom: none !important;
 }
 
+
+
 .modal-footer {
   border-top: none !important;
   padding: 0 12px !important;
@@ -27,6 +29,7 @@
   border: none;
   font-weight: 600;
   color: rgb(57, 57, 158);
+  cursor: pointer;
 }
 .register-button:hover {
   color: rgb(27, 27, 77);

@@ -147,3 +147,7 @@
 .icons2 {
   margin-right: 5px;
 }
+
+.logout {
+  cursor: pointer;
+}

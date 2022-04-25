@@ -75,9 +75,9 @@ export default function Signin(props) {
           </Modal.Footer>
           <div className="footer-signup">
             У вас нет аккаунта?{" "}
-            <button onClick={() => setSignup(true)} className="register-button">
+            <span onClick={() => setSignup(true)} className="register-button">
               Зарегистрироваться
-            </button>
+            </span>
           </div>
         </>
       ) : (

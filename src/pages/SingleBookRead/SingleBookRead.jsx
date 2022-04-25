@@ -72,9 +72,9 @@ const SingleBookRead = () => {
                 </button>
 
                 {user ? (
-                  <button onClick={handleUnLike} className={style.favoriteFalse}> ✩ </button>
+                  <button onClick={handleUnLike} className={style.favoriteTrue}> ★ </button>
                 ) : (
-                  <button onClick={handleLike} className={style.favoriteTrue}>  ★</button>
+                  <button onClick={handleLike} className={style.favoriteFalse}> ✩ </button>
                 )}
                 </div>
                

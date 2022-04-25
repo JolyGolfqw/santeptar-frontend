@@ -15,7 +15,7 @@ export default function ProfileModal({id}) {
     return (
       <div className={styles.profileModal}>
         <Link to={`/profile/${id}`}><div>Личный кабинет</div></Link>
-        <div onClick={logOut}>Выйти</div>
+        <div className={styles.logout} onClick={logOut}>Выйти</div>
       </div>
     )
   }

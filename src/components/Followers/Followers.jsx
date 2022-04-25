@@ -25,7 +25,6 @@ const dispatch = useDispatch();
         <UserSmallCard dude={dude}/>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={onHide}>Close</Button>
       </Modal.Footer>
     </Modal>
   );
