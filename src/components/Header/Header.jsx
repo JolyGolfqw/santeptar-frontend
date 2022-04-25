@@ -77,11 +77,11 @@ const Header = () => {
               onClick={() => setProfile(!profile)}
               className={styles.mainUser}
             >
-              <img
+              {/* <img
                 src={`http://localhost:4000/${dude.avatar}`}
                 alt="avatar"
                 className={styles.avatar}
-              ></img>
+              ></img> */}
               <div className={styles.user}>{userName}</div>
             </div>
           ) : (

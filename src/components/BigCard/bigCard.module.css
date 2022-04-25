@@ -94,9 +94,20 @@
 
 .btnContainer {
 	display: flex;
+	justify-content: space-between;
 }
 
 .readBook {
 	width: 100px;
-}
+	float: right;
+	background-color: black;
+		border: none;
 
+}
+.readBook:hover {
+	width: 100px;
+	float: right;
+	color: black;
+	background-color: white;
+	border: none;
+}
