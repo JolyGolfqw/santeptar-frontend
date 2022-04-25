@@ -9,9 +9,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadCategories } from "../../redux/features/categories";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ProfileModal from "./ProfileModal";
+import { CloseButton } from "react-bootstrap";
+import { loadUsers } from "../../redux/features/users";
 
 const Header = () => {
   const [genresModal, setGenresModal] = useState(false);
+  const dispatch = useDispatch()
 
   const userName = useSelector((state) => state.application.userName);
   const user = useSelector((state) => state.application.user);
@@ -20,6 +23,10 @@ const Header = () => {
 
   const users = useSelector((state) => state.users.items);
   const dude = users.find(item => item._id === user)
+
+  useEffect(() => {
+    dispatch(loadUsers())
+  }, [dispatch])
 
   const navigate = useNavigate();
 
@@ -45,6 +52,7 @@ const Header = () => {
   const showMainPage = () => {
     return navigate("/");
   };
+
 
   return (
     <>
@@ -78,7 +86,7 @@ const Header = () => {
               className={styles.mainUser}
             >
               <img
-                src={`http://localhost:4000/${dude.avatar}`}
+                src={`http://localhost:4000/${dude && dude.avatar}`}
                 alt="avatar"
                 className={styles.avatar}
               ></img>
