@@ -29,14 +29,14 @@ const BigCard = ({img, title, description, bookId}) => {
                 <div><ion-icon name="happy-outline"></ion-icon></div>
                 <span>Голосов</span>
               </div>
-              <h6>0</h6>
+              <h6>3</h6>
             </div>
             <div className={styles.time}>
               <div className={styles.bookIcon}>
                 <div><ion-icon name="book-outline"></ion-icon></div>
                 <span>Время</span>
               </div>
-              <h6>5 мин</h6>
+              <h6>23 мин</h6>
             </div>
           </div>
           <div className={styles.contentMain}>

@@ -126,7 +126,7 @@
   border-radius: 8px;
 }
 .title {
-  height: 83px;
+  height: 63px;
   width: 344px;
   font-weight: 700;
   color: #121212;
@@ -214,13 +214,13 @@
 }
 .avatar img {
   width: 70px;
-	height: 70px;
-	object-fit: cover;
+  height: 70px;
+  object-fit: cover;
   border-radius: 50%;
 }
 
 .avatar {
-	text-align: center;
+  text-align: center;
 }
 
 .name {
@@ -259,7 +259,7 @@
   border-radius: 50%;
   height: 50px;
   padding: 3px;
-	object-fit: cover;
+  object-fit: cover;
 }
 .comments_field label {
   position: absolute;
@@ -289,24 +289,24 @@
 }
 
 .titleContainer {
-  display: flex
+  display: flex;
 }
 
 .continuedBtn {
-  height: 35px;
-  padding: 5px 15px;
-  font-size: 15px;
+  width: 250px;
+  height: 50px;
+  margin-top: 12px;
+  padding: 10px;
+  font-size: 18px;
   line-height: 18px;
   border-radius: 6px;
   color: #fff;
   background-color: #ff6122;
   font-weight: 600;
   text-align: center;
-  vertical-align: middle;
   cursor: pointer;
   border: 2px solid transparent;
   float: right;
-  margin: 5px 15px;
 }
 .comments_field button:hover {
   color: rgb(227, 227, 227);
@@ -318,7 +318,7 @@
   width: 830px;
   margin: auto;
   padding: 10px;
-  padding-left: 30px
+  padding-left: 30px;
 }
 .header_comment_user {
   display: flex;
@@ -326,11 +326,13 @@
   justify-content: space-between;
 }
 .image_comment_user .avatar_comment_user {
-  width: 50px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   float: left;
   margin-top: 5px;
+  object-fit: cover;
+  margin-top: -3px;
 }
 .name_and_data_comment_user {
   margin-left: 10px;
@@ -353,11 +355,37 @@
 }
 .delete_btn_comment_user:hover {
   color: black;
-  
 }
 .text_comment_user {
   text-align: justify;
   width: 710px;
   padding: 5px 0;
   margin: auto;
+}
+.favoriteFalse {
+  font-size: 45px;
+  margin-left: 20px;
+  padding: 0;
+  color: #000000;
+  text-decoration: none;
+}
+.favoriteTrue {
+  font-size: 45px;
+  margin-left: 20px;
+
+
+  color: orange;
+  text-decoration: none;
+}
+.wrapper {
+  padding-top: 25px;
+}
+.favoriteFalse:hover {
+  color: #000000;
+}
+.favoriteTrue:hover {
+  color: orange;
+}
+.flex {
+  display: flex;
 }

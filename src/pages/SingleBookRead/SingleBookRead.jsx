@@ -49,7 +49,7 @@ const SingleBookRead = () => {
       const user = item.likes.length && item.likes.find((i) => i === signUser);
 
       return (
-        <div key={item._id}>
+        <div key={item._id} className={style.wrapper}>
           <Header />
           {/* bookname */}
           <div className={style.slash}>
@@ -63,6 +63,7 @@ const SingleBookRead = () => {
               </div>
               <div className={style.inform}>
                 <div className={style.title}>{item.title}</div>
+                <div className={style.flex}>
                 <button
                   onClick={() => setShow(true)}
                   className={style.continuedBtn}
@@ -71,10 +72,12 @@ const SingleBookRead = () => {
                 </button>
 
                 {user ? (
-                  <button onClick={handleUnLike}>Убрать</button>
+                  <button onClick={handleUnLike} className={style.favoriteFalse}> ✩ </button>
                 ) : (
-                  <button onClick={handleLike}>Избранное</button>
+                  <button onClick={handleLike} className={style.favoriteTrue}>  ★</button>
                 )}
+                </div>
+               
                 {/* ICONS */}
                 <div className={style.icons}>
                   <div className={style.icon}>
