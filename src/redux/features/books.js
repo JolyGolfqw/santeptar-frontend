@@ -40,12 +40,12 @@ export default function books(state = initialState, action) {
     case "books/like/fulfilled":
       return {
         ...state,
-        items: state.items.map(item => {
-          if(item._id === action.payload.id) {
-            item.likes = [...item.likes, action.payload.likes]
-            return item
+        items: state.items.map((item) => {
+          if (item._id === action.payload.id) {
+            item.likes = [...item.likes, action.payload.likes];
+            return item;
           }
-          return item
+          return item;
         }),
         loading: false,
       };
@@ -65,12 +65,12 @@ export default function books(state = initialState, action) {
     case "books/unlike/fulfilled":
       return {
         ...state,
-        items: state.items.map(item => {
-          if(item._id === action.payload.bookId) {
-           item.likes = item.likes.filter(i => i !== action.payload.likes)
-            return item
+        items: state.items.map((item) => {
+          if (item._id === action.payload.bookId) {
+            item.likes = item.likes.filter((i) => i !== action.payload.likes);
+            return item;
           }
-          return item
+          return item;
         }),
         loading: false,
       };
@@ -91,8 +91,9 @@ export default function books(state = initialState, action) {
       return {
         ...state,
         items: state.items.map((item) => {
-          if (item._id === action.payload._id) {
-            return (item = action.payload);
+          if (item._id === action.payload.id) {
+            item = action.payload.text;
+            return item;
           }
           return item;
         }),
@@ -173,7 +174,7 @@ export const like = (likes, id) => {
       });
       const json = await res.json();
 
-      dispatch({ type: "books/like/fulfilled", payload: {id, likes} });
+      dispatch({ type: "books/like/fulfilled", payload: { id, likes } });
     } catch (err) {
       dispatch({ type: "books/like/rejected", payload: err.message });
     }
@@ -191,7 +192,7 @@ export const unLike = (likes, bookId) => {
         body: JSON.stringify({ likes }),
       });
       const json = await res.json();
-      dispatch({ type: "books/unlike/fulfilled", payload: {likes, bookId} });
+      dispatch({ type: "books/unlike/fulfilled", payload: { likes, bookId } });
     } catch (err) {
       dispatch({ type: "books/unlike/rejected", payload: err.message });
     }
@@ -202,13 +203,13 @@ export const continueBook = (text, id) => {
   return async (dispatch) => {
     dispatch({ type: "book/edit/pending" });
     try {
-      const res = await fetch(`http://localhost:4000/book/${id}/edit`, {
+      const res = await fetch(`http://localhost:4000/books/${id}/edit`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text }),
       });
       const data = await res.json();
-      dispatch({ type: "book/edit/fulfilled", payload: data });
+      dispatch({ type: "book/edit/fulfilled", payload: { text, id } });
     } catch (error) {
       dispatch({ type: "book/edit/rejected", payload: error.message });
     }

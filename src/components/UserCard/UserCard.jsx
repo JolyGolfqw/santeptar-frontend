@@ -21,13 +21,11 @@ const UserCard = ({ dude }) => {
   const dispatch = useDispatch();
 
 
-  const [photo, setPhoto] = useState("");
   const [opened, setOpened] = useState(false);
   const [preview, setPreview] = useState("");
   const [show, setShow] = useState(false);
   const [showFollowers, setShowFollowers] = useState(false);
 
-  console.log(photo)
 
   const handleUpdateAvatar = (e) => {
     dispatch(editAvatar(e, id));
@@ -48,23 +46,15 @@ const UserCard = ({ dude }) => {
   useEffect(() => {
     dispatch(loadUsers());
     dispatch(loadBooks());
-    if (photo) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setPreview(reader.result);
-      };
-      reader.readAsDataURL(photo);
-    } else {
-      setPreview(null);
-    }
-  }, [dispatch, photo]);
+    
+  }, [dispatch]);
 
   const userBooks = books.filter((item) => item.author._id === id);
   const lastBook = userBooks[userBooks.length - 1];
-
-  const following = dude.followers.find((item) => item._id === signUser)
-  const [follow, setFollow] = useState(following)
   console.log(dude)
+  const following = dude.followers.find((item) => item === signUser)
+  const [follow, setFollow] = useState(following)
+  
 
   return (
     <div key={dude._id} className={styles.cardWrapper}>
@@ -88,12 +78,7 @@ const UserCard = ({ dude }) => {
               accept="image/*"
               onChange={(e) => {
                 handleUpdateAvatar(e.target.files[0])
-                /* const file = e.target.files[0];
-                if (file && file.type.substring(0, 5) === "image") {
-                  setPhoto(file);
-                } else {
-                  setPhoto(null);
-                } */
+                
               }}
             />
             <label htmlFor="upload">Сменить аватар</label>

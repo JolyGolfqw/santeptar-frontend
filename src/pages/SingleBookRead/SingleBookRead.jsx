@@ -47,7 +47,7 @@ const SingleBookRead = () => {
   return books.map((item) => {
     if (item._id === id) {
       const user = item.likes.length && item.likes.find((i) => i === signUser);
-      console.log(item);
+
       return (
         <div key={item._id} className={style.wrapper}>
           <Header />
@@ -149,7 +149,7 @@ const SingleBookRead = () => {
               </div>
             </div>
           </div>
-          <BookTextEdit show={show} onHide={() => setShow(false)} />
+          <BookTextEdit title={item.title} book={item.text} id={item._id} show={show} onHide={() => setShow(false)} />
         </div>
       );
     }
