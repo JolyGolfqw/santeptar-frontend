@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Carusel from "../components/Carusel/Carusel";
 import Header from "../components/Header/Header";
 import Books from "../components/Books/Books";
@@ -8,7 +8,6 @@ import { useSelector } from "react-redux";
 
 export default function MainPage() {
 const books = useSelector(state => state.books.items)
-console.log("AAAAAAAAAAAAAAAAAAAAaa")
 
 const randomOne = Math.floor(Math.random(0, 12) * 10)
 const randomTwo = Math.floor(Math.random(0, 12) * 10) 

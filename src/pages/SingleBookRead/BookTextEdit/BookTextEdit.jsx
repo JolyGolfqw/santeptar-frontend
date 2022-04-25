@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import style from './styles.module.css'
+import { continueBook } from "../../../redux/features/books";
+import style from "./styles.module.css";
 
-export default function BookTextEdit({ show, onHide }) {
+export default function BookTextEdit({ title, book, id, show, onHide }) {
   const [fullscreen, setFullscreen] = useState(true);
 
-  const [text, setText] = useState("");
-  const author = localStorage.getItem('user')
+  const [text, setText] = useState(book);
+  const author = localStorage.getItem("user");
 
   const handleText = (e) => {
     setText(e.target.value);
@@ -16,6 +17,10 @@ export default function BookTextEdit({ show, onHide }) {
   const dispatch = useDispatch();
 
   const handlePublish = () => {
+      dispatch(continueBook(text, id))
+      setTimeout(() => {
+        window.location.reload()
+      }, 500)
   };
 
   return (
@@ -28,19 +33,18 @@ export default function BookTextEdit({ show, onHide }) {
         aria-labelledby="example-custom-modal-styling-title"
       >
         <Modal.Header closeButton>
-          <Modal.Title>Modal</Modal.Title>
-          <Button onClick={handlePublish}>Опубликовать</Button>
+          <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <input type="text" />
           <textarea
             value={text}
             onChange={(e) => handleText(e)}
-            // className={style.bookText}
+            className={style.bookText}
             id=""
             cols="30"
             rows="10"
           ></textarea>
+          <Button onClick={handlePublish}>Опубликовать</Button>
         </Modal.Body>
       </Modal>
     </>

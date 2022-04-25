@@ -23,12 +23,19 @@ const Profile = () => {
 
 
 
+
+
   const users = useSelector(state => state.users.items)
+  const loader = useSelector(state => state.users.loading)
   const books = useSelector(state => state.books.items)
 
   const userBooks = books.filter(item => item.author._id === id)
 
-  return users.length > 0 && users.map(item => {
+  if (loader) {
+    return <div>Загрузка...</div>
+  }
+
+  return users.map(item => {
     if (item._id === id) {
       return (
         <>
