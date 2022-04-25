@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
 
 .header {
   margin: 0;
@@ -14,55 +14,52 @@
 }
 .searchPoint {
   width: 90%;
-  
 }
 .mainName {
   font-size: 20px;
   font-weight: 700;
   padding-bottom: 4px;
-	cursor: pointer;
-	font-family: 'Montserrat', sans-serif;
-	
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
 }
 
 .mainNav {
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  width: 500px;
 }
 
 .mainNavSearch {
   display: flex;
   text-align: center;
-  width: 150px;
   margin: auto;
 }
 
 .mainNavButton {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
   padding-top: 2px;
   cursor: pointer;
-	color: black;
-  width: 180px;
+  color: black;
   margin: auto;
 }
 
 .mainNavInput {
-  width: 180px;
   margin: auto;
   background-color: transparent;
   outline: none;
-	border: none;
-	font-size: 16px;
-	margin-left: 2px;
-	color: rgba(0, 0, 0, 0.6);
+  border: none;
+  font-size: 16px;
+  margin-left: 2px;
+  color: rgba(0, 0, 0, 0.6);
 }
 .mainNavInput::placeholder {
-	color: black;
+  color: black;
 }
 .mainUser {
   display: flex;
+  cursor: pointer;
 }
 .avatar {
   width: 30px;
@@ -84,19 +81,22 @@
   display: flex;
   align-items: center;
   margin-left: 4px;
+  color: black;
 }
 
 .mainNavGenre {
   display: flex;
   cursor: pointer;
-  width: 180px;
   margin: auto;
+  margin-left: 5px;
 }
-
+.mainNavStr {
+  cursor: pointer;
+}
 .genresModal {
-	padding-top: 15px;
-	padding-left: 15px;
-	display: flex;
+  padding-top: 15px;
+  padding-left: 15px;
+  display: flex;
   box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
   position: absolute;
   z-index: 1;
@@ -107,8 +107,8 @@
 }
 
 .column {
-	margin-right: 24px;
-	margin-bottom: 18px;
+  margin-right: 24px;
+  margin-bottom: 18px;
   text-decoration: none;
   color: black;
   border-style: none;
@@ -122,6 +122,28 @@
 .profileModal {
   position: absolute;
   z-index: 1;
-  right: 50px;
-  top: 52px;
+  right: 55px;
+  top: 65px;
+  padding: 10px;
+  border-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 0px 0px 0px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+  border-radius: 8px;
+ 
+}
+.profileModal a {
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+.mainNavStr {
+  display: flex;
+  text-align: center;
+  margin: auto;
+}
+.icons1 {
+  margin-left: 5px;
+}
+.icons2 {
+  margin-right: 5px;
 }

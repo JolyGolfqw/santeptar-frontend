@@ -9,6 +9,9 @@
   text-align: left;
   margin-top: 30px;
 }
+.content {
+  padding-top: 25px;
+}
 .container {
   width: 1000px;
   margin: auto;

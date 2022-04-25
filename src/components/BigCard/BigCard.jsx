@@ -35,7 +35,7 @@ const BigCard = ({img, title, description}) => {
             </div>
           </div>
           <div className={styles.contentMain}>
-            {description}
+            {description.substr(0, 450) + "..."}
           </div>
         </div>
       </div>

@@ -31,7 +31,6 @@
 
 .details {
   width: 1400px;
-  height: 750px;
   box-shadow: 1;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
@@ -52,7 +51,8 @@
 }
 
 .createStoreHeader {
-  width: 100%;
+  width: 95%;
+  margin: auto;
   padding: 8px;
   border-bottom: 1px solid #eee;
   background-color: #fff;
@@ -62,7 +62,7 @@
 .iconHeader {
   display: flex;
   justify-content: space-between;
-  width: 180px;
+  width: 270px;
   margin-top: 5px;
 }
 .addstory {
@@ -199,4 +199,18 @@
     width: 100%;
     padding: 10px;
     height: 90%;
+}
+.iconBtn:hover {
+  color: black;
+}
+.generateElems {
+ font-size: 15px;
+ padding: 5px;
+ margin: 5px;
+ margin-left: 25px;
+ color: #6f6f6f;
+
+}
+.generateElems:hover {
+  background-color: #dadada6e;
 }

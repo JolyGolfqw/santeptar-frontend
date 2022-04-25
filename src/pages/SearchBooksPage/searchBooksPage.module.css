@@ -23,3 +23,10 @@
   border: 1px solid rgb(165, 165, 165);
   resize: vertical;
 }
+.sector_clear {
+	text-align: center;
+	margin-top: 150px;
+	margin-bottom: 270px;
+	color: rgb(47, 47, 47);
+	font-weight: 500;
+}

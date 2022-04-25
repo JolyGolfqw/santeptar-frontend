@@ -43,10 +43,13 @@ export default function CreateStory() {
 
   const addChars = () => {
     setChars([...chars, heroes]);
+    setHeroes('')
+
   };
 
   const addTags = () => {
     setTags([...tags, tag]);
+    setTag('')
   };
   const categories = useSelector((state) => state.categories.items);
 
@@ -106,22 +109,22 @@ export default function CreateStory() {
         </div>
         <div className={style.details}>
           <div className={style.titleCard}>
-            <span>Story Details</span>
+            <span>Детали истории</span>
           </div>
           <div className={style.funcional}>
             <div className={style.title}>
-              <h5>Title </h5>
+              <h5>Название </h5>
               <input
                 value={title}
                 onChange={(e) => handleTitle(e)}
                 type="text"
-                placeholder="Untitled Story"
+                placeholder="Название истории"
               />
             </div>
 
             <div className={style.title}>
               <h5>
-                Description <ion-icon name="alert-circle-outline"></ion-icon>
+                Описание <ion-icon name="alert-circle-outline"></ion-icon>
               </h5>
               <textarea
                 value={desc}
@@ -135,7 +138,7 @@ export default function CreateStory() {
 
             <div className={style.characters}>
               <h5>
-                Main Characters{" "}
+                Персонажи{" "}
                 <ion-icon name="alert-circle-outline"></ion-icon>
               </h5>
               <div>
@@ -143,17 +146,18 @@ export default function CreateStory() {
                   value={heroes}
                   onChange={(e) => handleChar(e)}
                   type="text"
+                  placeholder="Главные герои"
                 />
                 <button onClick={addChars}>+</button>
                 {chars.map((item) => {
-                  return <div>{item}</div>;
+                  return <li className={style.generateElems}>{item}</li>;
                 })}
               </div>
             </div>
 
             <div className={style.category}>
               <h5>
-                Category <ion-icon name="alert-circle-outline"></ion-icon>
+                Категория <ion-icon name="alert-circle-outline"></ion-icon>
               </h5>
               <select
                 value={category}
@@ -170,18 +174,18 @@ export default function CreateStory() {
 
             <div className={style.characters}>
               <h5>
-                Tags <ion-icon name="alert-circle-outline"></ion-icon>
+                Теги <ion-icon name="alert-circle-outline"></ion-icon>
               </h5>
               <div>
                 <input
                   value={tag}
                   onChange={(e) => handleTags(e)}
                   type="text"
-                  placeholder="tags"
+                  placeholder="Теги"
                 />
                 <button onClick={addTags}>+</button>
                 {tags.map((item) => {
-                  return <div>{item}</div>;
+                  return <li className={style.generateElems}>{item}</li>;
                 })}
               </div>
             </div>

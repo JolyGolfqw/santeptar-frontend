@@ -3,6 +3,9 @@ import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
 import WhileReadingCard from "./WhileReading";
 import styles from "./style.module.css";
+import WhileReadingCardTwo from "./WhileReadingTwo";
+import WhileReadingCardThree from "./WhileReadingThree.";
+import WhileReadingCardFour from "./WhileReadingFour";
 
 const WhileReadingCarousel = () => {
   return (
@@ -13,27 +16,17 @@ const WhileReadingCarousel = () => {
             <WhileReadingCard />
           </div>
           <div>
-            <WhileReadingCard />
+            <WhileReadingCardTwo />
           </div>
         </div>
       </Carousel.Item>
       <Carousel.Item>
       <div className={styles.reversCard}>
           <div>
-            <WhileReadingCard />
+            <WhileReadingCardThree />
           </div>
           <div>
-            <WhileReadingCard />
-          </div>
-        </div>
-      </Carousel.Item>
-      <Carousel.Item>
-      <div className={styles.reversCard}>
-          <div>
-            <WhileReadingCard />
-          </div>
-          <div>
-            <WhileReadingCard />
+            <WhileReadingCardFour />
           </div>
         </div>
       </Carousel.Item>
