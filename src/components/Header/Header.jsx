@@ -17,6 +17,10 @@ const Header = () => {
   const user = useSelector((state) => state.application.user);
   const token = useSelector((state) => state.application.token);
   const avatar = useSelector((state) => state.application.avatar);
+
+  const users = useSelector((state) => state.users.items);
+  const dude = users.find(item => item._id === user)
+
   const navigate = useNavigate();
 
   const [profile, setProfile] = useState(false);
@@ -74,7 +78,7 @@ const Header = () => {
               className={styles.mainUser}
             >
               <img
-                src={`http://localhost:4000/${avatar}`}
+                src={`http://localhost:4000/${dude.avatar}`}
                 alt="avatar"
                 className={styles.avatar}
               ></img>

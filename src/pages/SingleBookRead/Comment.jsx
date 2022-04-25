@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { removeComment } from "../../redux/features/comments";
 import style from "../SingleBookRead/singleBookRead.module.css";
 
@@ -29,7 +30,7 @@ const Comment = (props) => {
             ></img>
           </div>
           <div className={style.name_and_data_comment_user}>
-            <div className={style.name_comment_user}>{element.user.name ? element.user.name : userName}</div>
+            <div className={style.name_comment_user}><Link to={`/profile/${element.user._id}`}>{element.user.name ? element.user.name : userName}</Link></div>
             <div className={style.data_comment_user}>
               {element.date.substr(0, 10)}
             </div>

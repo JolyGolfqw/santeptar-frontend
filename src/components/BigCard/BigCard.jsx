@@ -1,8 +1,9 @@
 import React from "react";
-import { NavItem } from "react-bootstrap";
+import { Button, NavItem } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import styles from "./bigCard.module.css";
 
-const BigCard = ({img, title, description}) => {
+const BigCard = ({img, title, description, bookId}) => {
   return (
     <div className={styles.bigCard}>
       <div className={styles.bigCardBasis}>
@@ -15,9 +16,13 @@ const BigCard = ({img, title, description}) => {
         </div>
         <div className={styles.bigCardContent}>
           <div className={styles.contentHeader}>{title}</div>
+          <div className={styles.btnContainer}>
           <div className={styles.endedStories}>
             <h5>Завершенная история</h5>
           </div>
+          <Link to={`/book/${bookId}`}><Button className={styles.readBook} variant="success">Читать</Button></Link>
+          </div>
+        
           <div className={styles.info}>
             <div className={styles.likes}>
               <div className={styles.likesIcon}>
