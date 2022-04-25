@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 
 export default function MainPage() {
 const books = useSelector(state => state.books.items)
+console.log("AAAAAAAAAAAAAAAAAAAAaa")
 
 const randomOne = Math.floor(Math.random(0, 12) * 10)
 const randomTwo = Math.floor(Math.random(0, 12) * 10) 
@@ -33,7 +34,7 @@ const randomThree = Math.floor(Math.random(0, 12) * 10)
 
         {books.map((book, i) => {
           if (i === randomThree) {
-            return (<BigCard img={book.img} title={book.title} description={book.description}/>)
+            return (<BigCard img={book.img} bookId={book._id} title={book.title} description={book.description}/>)
           }
         })}
         <Books />

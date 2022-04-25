@@ -1,31 +1,53 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
-import { loadBooks } from "../../redux/features/books";
+import { like, loadBooks, unLike } from "../../redux/features/books";
 import { getComments } from "../../redux/features/comments";
 import { loadUsers } from "../../redux/features/users";
 import style from "../SingleBookRead/singleBookRead.module.css";
+import BookTextEdit from "./BookTextEdit/BookTextEdit";
 import CommentPost from "./CommentPost";
 const SingleBookRead = () => {
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const signUser = useSelector((state) => state.application.user);
 
-	const { id } = useParams()
+  const books = useSelector((state) => state.books.items);
+  const comments = useSelector((state) => state.comments.comments);
+  const commentsCount = comments.filter((element) => element.books === id);
+  const loader = useSelector((state) => state.books.loading);
 
-  const dispatch = useDispatch()
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     dispatch(loadBooks());
-		dispatch(getComments());
-		dispatch(loadUsers())
-  }, [dispatch])
+    dispatch(getComments());
+    dispatch(loadUsers());
+  }, [dispatch]);
 
-  const books = useSelector((state) => state.books.items);
-	const comments = useSelector(state => state.comments.comments)
-	const commentsCount = comments.filter((element) => element.books === id)
+  const handleLike = () => {
+    dispatch(like(signUser, id));
+    // setTimeout(() => {
+    //   window.location.reload();
+    // }, 500);
+  };
 
-  return books.map(item => {
-		
+  const handleUnLike = () => {
+    dispatch(unLike(signUser, id));
+    // setTimeout(() => {
+    //   window.location.reload();
+    // }, 500);
+  };
+
+  if (loader) {
+    return <div>Загрузка....</div>;
+  }
+
+  return books.map((item) => {
     if (item._id === id) {
+      const user = item.likes.length && item.likes.find((i) => i === signUser);
+      console.log(item);
       return (
         <div key={item._id}>
           <Header />
@@ -41,6 +63,18 @@ const SingleBookRead = () => {
               </div>
               <div className={style.inform}>
                 <div className={style.title}>{item.title}</div>
+                <button
+                  onClick={() => setShow(true)}
+                  className={style.continuedBtn}
+                >
+                  Продолжить историю
+                </button>
+
+                {user ? (
+                  <button onClick={handleUnLike}>Убрать</button>
+                ) : (
+                  <button onClick={handleLike}>Избранное</button>
+                )}
                 {/* ICONS */}
                 <div className={style.icons}>
                   <div className={style.icon}>
@@ -74,7 +108,11 @@ const SingleBookRead = () => {
                 {/* BUTTON  */}
                 <a className={style.fancy} href="#">
                   <span className={style.top_key}></span>
-                  <span className={style.text}>{item.condition ? 'История завершена' : 'История не завершена'}</span>
+                  <span className={style.text}>
+                    {item.condition
+                      ? "История завершена"
+                      : "История не завершена"}
+                  </span>
                   <span className={style.btn1}></span>
                   <span className={style.btn2}></span>
                 </a>
@@ -86,27 +124,33 @@ const SingleBookRead = () => {
             <div className={style.content}>
               <div className={style.sidebar}>
                 <div className={style.avatar}>
-                  <img src={`http://localhost:4000/${item.author.avatar}`} alt="avatar-by" />
+                  <img
+                    src={`http://localhost:4000/${item.author.avatar}`}
+                    alt="avatar-by"
+                  />
                 </div>
                 <div className={style.name}>
-                  by <span><Link to={`/profile/${item.author._id}`}>{item.author.name}</Link></span>
+                  от{" "}
+                  <span>
+                    <Link to={`/profile/${item.author._id}`}>
+                      {item.author.name}
+                    </Link>
+                  </span>
                 </div>
                 <div className={style.follovers}></div>
               </div>
               <div className={style.reading_field}>
                 <h1>Пролог</h1>
-                <div className={style.readPage}>
-                  {item.text}
-                </div>
-                <CommentPost id={id} comments={comments}/>
+                <div className={style.readPage}>{item.text}</div>
+                <CommentPost id={id} comments={comments} />
               </div>
             </div>
           </div>
+          <BookTextEdit show={show} onHide={() => setShow(false)} />
         </div>
       );
     }
-  })
-  
+  });
 };
 
 export default SingleBookRead;

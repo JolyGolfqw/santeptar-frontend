@@ -213,9 +213,10 @@
   padding: 10px 30px;
 }
 .avatar img {
-  width: 60px;
-	height: 60px;
+  width: 70px;
+	height: 70px;
 	object-fit: cover;
+  border-radius: 50%;
 }
 
 .avatar {
@@ -271,6 +272,27 @@
   border: 0;
 }
 .comments_field button {
+  height: 35px;
+  padding: 5px 15px;
+  font-size: 15px;
+  line-height: 18px;
+  border-radius: 6px;
+  color: #fff;
+  background-color: #ff6122;
+  font-weight: 600;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 2px solid transparent;
+  float: right;
+  margin: 5px 15px;
+}
+
+.titleContainer {
+  display: flex
+}
+
+.continuedBtn {
   height: 35px;
   padding: 5px 15px;
   font-size: 15px;
