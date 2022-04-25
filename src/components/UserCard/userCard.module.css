@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap");
 
 .cardWrapper h4,
 .cardWrapper h5,
@@ -10,15 +10,15 @@
 .cardWrapper {
   width: 1000px;
   display: flex;
-	margin: auto;
-    position: relative;
+  margin: auto;
+  position: relative;
 }
 
 .imageWrapper {
   position: relative;
   margin-right: 50px;
-	box-shadow: 9px 9px 0px -1px rgba(105, 172, 199, 0.871);
-	border-radius: 10px;
+  box-shadow: 9px 9px 0px -1px rgba(105, 172, 199, 0.871);
+  border-radius: 10px;
 }
 
 .imageWrapper button {
@@ -29,7 +29,7 @@
   font-size: 30px;
   border: none;
   color: white;
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .imageWrapper h4 {
@@ -46,7 +46,7 @@
   object-fit: cover;
   display: block;
   border-radius: 10px;
-	filter: contrast(70%);
+  filter: contrast(70%);
 }
 
 .descAndButton {
@@ -54,7 +54,7 @@
   justify-content: space-between;
   border-bottom: 2px solid black;
   padding-bottom: 15px;
-	align-items: center;
+  align-items: center;
 }
 
 .descAndButton h4 {
@@ -63,52 +63,53 @@
 
 .descAndButton button {
   background: none;
-	border: 2px solid;
-	color: #e14f39;
-	border-radius: 5px;
-	font-weight: 700;
-	padding: 5px 10px;
+  border: 2px solid;
+  color: #e14f39;
+  border-radius: 5px;
+  font-weight: 700;
+  padding: 5px 10px;
 }
 
 .descAndButton button:hover {
   background-color: #e14f39;
   transition: 0.3s;
-  color: white
+  color: white;
 }
 
 .userDesc {
-	flex: 1;
-	margin-top: 20px;
-	font-family: 'Neucha', cursive;
-	font-size: 18px;
+  flex: 1;
+  margin-top: 20px;
+  font-family: "Neucha", cursive;
+  font-size: 18px;
 }
 
 .lastBook {
   display: flex;
   justify-content: space-between;
   align-items: center;
-	flex: 1;
-	margin-top: 23px;
+  flex: 1;
+  margin-top: 23px;
 }
 
 .lastBookWrapper {
-	margin-right: 15px;
+  margin-right: 15px;
 }
 
 .lastBook h6 {
-	font-size: 15px;
+  font-size: 15px;
 }
 
 .lastBookText {
   flex: 1;
 }
 
-.lastText, .date {
-	color: #4c4c4cbe;
+.lastText,
+.date {
+  color: #4c4c4cbe;
 }
 
 .bookName {
-	color: #e14f39;
+  color: #e14f39;
 }
 
 .lastBook img {
@@ -122,40 +123,46 @@
 
 .buttons {
   display: flex;
-	margin-top: 33px;
+  margin-top: 33px;
 }
 
 .works {
-	border: 2px solid black;
-	border-radius: 6px;
-	padding: 10px 40px;
-	font-size: 20px;
-	margin-right: 40px;
-	box-shadow: 5px 5px 0px -1px #b9b2ae;
-	cursor: pointer;
+  border: 2px solid black;
+  border-radius: 6px;
+  padding: 10px 40px;
+  font-size: 20px;
+  margin-right: 40px;
+  box-shadow: 5px 5px 0px -1px #b9b2ae;
+  cursor: pointer;
 }
 
 .subs {
-	background: #000;
-	color: white;
-	border-radius: 6px;
-	padding: 10px 15px;
-	font-size: 20px;
-	box-shadow: 5px 5px 0px -1px #b9b2ae;
-	cursor: pointer;
+  background: #000;
+  color: white;
+  border-radius: 6px;
+  padding: 10px 15px;
+  font-size: 20px;
+  box-shadow: 5px 5px 0px -1px #b9b2ae;
+  cursor: pointer;
 }
 
 .descWrapper {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .editor {
-    position: absolute;
-    background-color: black;
-    z-index: 1;
-    top: 59px;
-    right: 16px;
-    color: white;
+  position: absolute;
+  background-color: black;
+  z-index: 1;
+  top: 30px;
+  right: 20px;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  border-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+  border-radius: 8px;
+  background-color: #fff;
 }
