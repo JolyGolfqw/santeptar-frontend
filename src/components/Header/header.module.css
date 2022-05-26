@@ -126,10 +126,9 @@
   top: 65px;
   padding: 10px;
   border-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 0px 0px 0px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
   border-radius: 8px;
- 
 }
 .profileModal a {
   outline: none;

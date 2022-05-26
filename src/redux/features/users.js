@@ -73,7 +73,7 @@ export default function users(state = initialState, action) {
         items: state.items.map((item) => {
           if (item._id === action.payload.id) {
             item.followers = [...item.followers, action.payload.followers];
-            return item
+            return item;
           }
           return item;
         }),

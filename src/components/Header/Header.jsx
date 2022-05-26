@@ -9,24 +9,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadCategories } from "../../redux/features/categories";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ProfileModal from "./ProfileModal";
-import { CloseButton } from "react-bootstrap";
 import { loadUsers } from "../../redux/features/users";
 
 const Header = () => {
   const [genresModal, setGenresModal] = useState(false);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const userName = useSelector((state) => state.application.userName);
   const user = useSelector((state) => state.application.user);
   const token = useSelector((state) => state.application.token);
-  const avatar = useSelector((state) => state.application.avatar);
-
   const users = useSelector((state) => state.users.items);
-  const dude = users.find(item => item._id === user)
+
+  const dude = users.find((item) => item._id === user);
 
   useEffect(() => {
-    dispatch(loadUsers())
-  }, [dispatch])
+    dispatch(loadUsers());
+  }, [dispatch]);
 
   const navigate = useNavigate();
 
@@ -53,7 +51,6 @@ const Header = () => {
     return navigate("/");
   };
 
-
   return (
     <>
       <div className={styles.header}>
@@ -67,12 +64,18 @@ const Header = () => {
                 Жанры
               </div>
               <div className={styles.arrow} onClick={handleClick}>
-                <ion-icon name="chevron-down-outline" className={styles.icons1}></ion-icon>
+                <ion-icon
+                  name="chevron-down-outline"
+                  className={styles.icons1}
+                ></ion-icon>
               </div>
             </div>
             <div className={styles.mainNavSearch}>
               <div className={styles.mainNavButton} onClick={hendleKeyPress}>
-                <ion-icon name="search-outline" className={styles.icons2}></ion-icon>
+                <ion-icon
+                  name="search-outline"
+                  className={styles.icons2}
+                ></ion-icon>
                 <div className={styles.mainNavGenre}>Поиск</div>
               </div>
             </div>
@@ -85,12 +88,11 @@ const Header = () => {
               onClick={() => setProfile(!profile)}
               className={styles.mainUser}
             >
-
               <img
                 src={`http://localhost:4000/${dude && dude.avatar}`}
                 alt="avatar"
                 className={styles.avatar}
-              ></img> 
+              ></img>
               <div className={styles.user}>{userName}</div>
             </div>
           ) : (

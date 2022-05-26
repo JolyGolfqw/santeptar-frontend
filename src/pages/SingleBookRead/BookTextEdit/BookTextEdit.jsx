@@ -17,10 +17,10 @@ export default function BookTextEdit({ title, book, id, show, onHide }) {
   const dispatch = useDispatch();
 
   const handlePublish = () => {
-      dispatch(continueBook(text, id))
-      setTimeout(() => {
-        window.location.reload()
-      }, 500)
+    dispatch(continueBook(text, id));
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
   };
 
   return (

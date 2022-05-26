@@ -28,16 +28,10 @@ const SingleBookRead = () => {
 
   const handleLike = () => {
     dispatch(like(signUser, id));
-    // setTimeout(() => {
-    //   window.location.reload();
-    // }, 500);
   };
 
   const handleUnLike = () => {
     dispatch(unLike(signUser, id));
-    // setTimeout(() => {
-    //   window.location.reload();
-    // }, 500);
   };
 
   if (loader) {
@@ -64,20 +58,32 @@ const SingleBookRead = () => {
               <div className={style.inform}>
                 <div className={style.title}>{item.title}</div>
                 <div className={style.flex}>
-                <button
-                  onClick={() => setShow(true)}
-                  className={style.continuedBtn}
-                >
-                  Продолжить историю
-                </button>
+                  <button
+                    onClick={() => setShow(true)}
+                    className={style.continuedBtn}
+                  >
+                    Продолжить историю
+                  </button>
 
-                {user ? (
-                  <button onClick={handleUnLike} className={style.favoriteTrue}> ★ </button>
-                ) : (
-                  <button onClick={handleLike} className={style.favoriteFalse}> ✩ </button>
-                )}
+                  {user ? (
+                    <button
+                      onClick={handleUnLike}
+                      className={style.favoriteTrue}
+                    >
+                      {" "}
+                      ★{" "}
+                    </button>
+                  ) : (
+                    <button
+                      onClick={handleLike}
+                      className={style.favoriteFalse}
+                    >
+                      {" "}
+                      ✩{" "}
+                    </button>
+                  )}
                 </div>
-               
+
                 {/* ICONS */}
                 <div className={style.icons}>
                   <div className={style.icon}>
@@ -149,7 +155,13 @@ const SingleBookRead = () => {
               </div>
             </div>
           </div>
-          <BookTextEdit title={item.title} book={item.text} id={item._id} show={show} onHide={() => setShow(false)} />
+          <BookTextEdit
+            title={item.title}
+            book={item.text}
+            id={item._id}
+            show={show}
+            onHide={() => setShow(false)}
+          />
         </div>
       );
     }

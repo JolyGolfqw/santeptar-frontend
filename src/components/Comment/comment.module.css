@@ -19,16 +19,16 @@
 }
 
 .user {
-    font-size: 18px;
-    font-weight: 700;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .buttonRemove {
-    cursor: pointer;
-    padding-top: 3px;
+  cursor: pointer;
+  padding-top: 3px;
 }
 
 .dateWriting {
-    margin: 5px 0 5px 0;
-    color: rgba(0, 0, 0, 0.582);
+  margin: 5px 0 5px 0;
+  color: rgba(0, 0, 0, 0.582);
 }

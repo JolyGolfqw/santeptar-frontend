@@ -20,21 +20,16 @@ const UserCard = ({ dude }) => {
   const signUser = useSelector((state) => state.application.user);
   const dispatch = useDispatch();
 
-
   const [opened, setOpened] = useState(false);
   const [preview, setPreview] = useState("");
   const [show, setShow] = useState(false);
   const [showFollowers, setShowFollowers] = useState(false);
 
-
   const handleUpdateAvatar = (e) => {
     dispatch(editAvatar(e, id));
-   localStorage.setItem("avatar", dude.avatar)
-    // setTimeout(() => {
-    //   window.location.reload();
-    // }, 500);
+    localStorage.setItem("avatar", dude.avatar);
   };
-  
+
   const handleSubscribe = () => {
     dispatch(subscribe(signUser, id));
   };
@@ -46,15 +41,10 @@ const UserCard = ({ dude }) => {
   useEffect(() => {
     dispatch(loadUsers());
     dispatch(loadBooks());
-    
   }, [dispatch]);
 
   const userBooks = books.filter((item) => item.author._id === id);
   const lastBook = userBooks[userBooks.length - 1];
-  console.log(dude)
-  const following = dude.followers.find((item) => item === signUser)
-  const [follow, setFollow] = useState(following)
-  
 
   return (
     <div key={dude._id} className={styles.cardWrapper}>
@@ -77,8 +67,7 @@ const UserCard = ({ dude }) => {
               hidden
               accept="image/*"
               onChange={(e) => {
-                handleUpdateAvatar(e.target.files[0])
-                
+                handleUpdateAvatar(e.target.files[0]);
               }}
             />
             <label htmlFor="upload">Сменить аватар</label>
@@ -97,7 +86,13 @@ const UserCard = ({ dude }) => {
       <div className={styles.descWrapper}>
         <div className={styles.descAndButton}>
           <h4>Описание</h4>
-          {signUser !== id ? dude.followers.find(item => item === signUser) ? <button onClick={handleUnSubscribe}>Отписаться</button> : <button onClick={handleSubscribe}>Подписаться</button> : null }
+          {signUser !== id ? (
+            dude.followers.find((item) => item === signUser) ? (
+              <button onClick={handleUnSubscribe}>Отписаться</button>
+            ) : (
+              <button onClick={handleSubscribe}>Подписаться</button>
+            )
+          ) : null}
         </div>
         <div className={styles.userDesc}>
           <p>{dude.description}</p>

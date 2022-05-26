@@ -4,12 +4,14 @@
   width: 230px;
   height: 350px;
 }
+
 .reversCard {
   display: flex;
   justify-content: space-around;
   margin: auto;
   width: 1200px;
 }
+
 .card {
   display: flex;
   align-items: flex-end;

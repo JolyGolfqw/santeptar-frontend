@@ -4,22 +4,19 @@ import { loadCategories } from "../../redux/features/categories";
 import style from "./styles.module.css";
 import "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js";
 import CreateStoryHeader from "./CreateStoryHeader";
-import { postBook } from "../../redux/features/books";
 
 export default function CreateStory() {
   const dispatch = useDispatch();
+
   const [photo, setPhoto] = useState("");
   const [preview, setPreview] = useState("");
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [category, setCategory] = useState("");
-
   const [heroes, setHeroes] = useState("");
   const [chars, setChars] = useState([]);
-
   const [tag, setTag] = useState("");
   const [tags, setTags] = useState([]);
-
 
   const handleTitle = (e) => {
     setTitle(e.target.value);
@@ -43,13 +40,12 @@ export default function CreateStory() {
 
   const addChars = () => {
     setChars([...chars, heroes]);
-    setHeroes('')
-
+    setHeroes("");
   };
 
   const addTags = () => {
     setTags([...tags, tag]);
-    setTag('')
+    setTag("");
   };
   const categories = useSelector((state) => state.categories.items);
 
@@ -66,10 +62,16 @@ export default function CreateStory() {
     }
   }, [dispatch, photo]);
 
-
   return (
     <>
-      <CreateStoryHeader photo={photo} chars={chars} tags={tags} category={category} desc={desc} title={title} />
+      <CreateStoryHeader
+        photo={photo}
+        chars={chars}
+        tags={tags}
+        category={category}
+        desc={desc}
+        title={title}
+      />
       <div className={style.mainPage}>
         <div className={style.createComp}>
           <div className={style.createImage}>
@@ -138,8 +140,7 @@ export default function CreateStory() {
 
             <div className={style.characters}>
               <h5>
-                Персонажи{" "}
-                <ion-icon name="alert-circle-outline"></ion-icon>
+                Персонажи <ion-icon name="alert-circle-outline"></ion-icon>
               </h5>
               <div>
                 <input

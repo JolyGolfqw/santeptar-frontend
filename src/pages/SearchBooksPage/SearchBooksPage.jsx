@@ -16,14 +16,13 @@ const SearchBooksPage = () => {
   const filteredBooks = books.filter((item) => {
     return item.title.toLowerCase().includes(value.toLowerCase());
   });
-  console.log(filteredBooks);
 
   useEffect(() => {
     dispatch(loadBooks());
   }, [dispatch]);
 
   return (
-    <div style={{paddingTop: 25}}> 
+    <div style={{ paddingTop: 25 }}>
       <Header />
 
       <div className={styles.search}>

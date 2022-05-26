@@ -1,20 +1,15 @@
 import React from "react";
 import styles from "./category.module.css";
 
-const CategoryCard = ({item}) => {
+const CategoryCard = ({ item }) => {
   return (
     <>
       <div className={styles.card}>
         <span className={styles.title}>{item.name}</span>
         <div className={styles.image}>
-          <img
-					className={styles.img}
-            src={item.image}
-            alt="img"
-          ></img>
+          <img className={styles.img} src={item.image} alt="категория"></img>
         </div>
       </div>
-      
     </>
   );
 };

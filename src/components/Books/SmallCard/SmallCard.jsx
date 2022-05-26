@@ -3,18 +3,21 @@ import ModalBookDesc from "../../ModalBookDesc/ModalBookDesc";
 import styles from "./smallcard.module.css";
 
 const SmallCard = ({ item }) => {
-	
   const [openModal, setOpenModal] = useState(false);
 
   const handleClick = (id) => {
-		setOpenModal(!openModal)
+    setOpenModal(!openModal);
   };
 
   return (
     <>
       <div className={styles.card}>
         <div className={styles.card_img}>
-          <img className={styles.image} src={`http://localhost:4000/${item.img}`} alt="img"></img>
+          <img
+            className={styles.image}
+            src={`http://localhost:4000/${item.img}`}
+            alt="img"
+          ></img>
         </div>
         <div className={styles.card_info}>
           <p className={styles.text_title}>{item.title}</p>
@@ -29,7 +32,13 @@ const SmallCard = ({ item }) => {
           </button>
         </div>
       </div>
-      {openModal && <ModalBookDesc openModal={openModal} setOpenModal={setOpenModal} item={item}/>}
+      {openModal && (
+        <ModalBookDesc
+          openModal={openModal}
+          setOpenModal={setOpenModal}
+          item={item}
+        />
+      )}
     </>
   );
 };

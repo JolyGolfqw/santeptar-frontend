@@ -16,7 +16,7 @@ export default function HistoryText({
   onHide,
 }) {
   const [fullscreen, setFullscreen] = useState(true);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [text, setText] = useState("");
   const author = localStorage.getItem("user");
@@ -29,7 +29,7 @@ export default function HistoryText({
 
   const handlePublish = () => {
     dispatch(postBook(photo, title, desc, chars, tags, category, text, author));
-    navigate('/')
+    navigate("/");
   };
 
   return (

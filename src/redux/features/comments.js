@@ -103,7 +103,7 @@ export const addComment = (comment, bookId, user) => {
 
 export const removeComment = (id, filtered) => {
   return async (dispatch, getState) => {
-		const state = getState();
+    const state = getState();
     dispatch({ type: "comments/remove/pending" });
     try {
       const res = await fetch(`http://localhost:4000/comments/${id}`, {

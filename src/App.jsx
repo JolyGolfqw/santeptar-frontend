@@ -25,8 +25,8 @@ const App = () => {
           <Route path="/categories" element={<CategoriesPage />} />
           <Route path="/profile/:id" element={<Profile />} />
           <Route path="/render/category/:id" element={<CategotyLinkPage />} />
-					<Route path="/searchbooks" element={<SearchBooksPage />} />
-          <Route path="/book/:id" element={<SingleBookRead/>} />
+          <Route path="/searchbooks" element={<SearchBooksPage />} />
+          <Route path="/book/:id" element={<SingleBookRead />} />
         </Routes>
       </BrowserRouter>
     </>

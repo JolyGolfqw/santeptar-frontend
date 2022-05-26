@@ -7,11 +7,11 @@ import Footer from "../components/Footer/Footer";
 import { useSelector } from "react-redux";
 
 export default function MainPage() {
-const books = useSelector(state => state.books.items)
+  const books = useSelector((state) => state.books.items);
 
-const randomOne = Math.floor(Math.random(0, 12) * 10)
-const randomTwo = Math.floor(Math.random(0, 12) * 10) 
-const randomThree = Math.floor(Math.random(0, 12) * 10) 
+  const randomOne = Math.floor(Math.random(0, 12) * 10);
+  const randomTwo = Math.floor(Math.random(0, 12) * 10);
+  const randomThree = Math.floor(Math.random(0, 12) * 10);
 
   return (
     <>
@@ -33,7 +33,15 @@ const randomThree = Math.floor(Math.random(0, 12) * 10)
 
         {books.map((book, i) => {
           if (i === randomThree) {
-            return (<BigCard img={book.img} bookId={book._id} title={book.title} description={book.description}/>)
+            return (
+              <BigCard
+                key={book._id}
+                img={book.img}
+                bookId={book._id}
+                title={book.title}
+                description={book.description}
+              />
+            );
           }
         })}
         <Books />
@@ -44,7 +52,14 @@ const randomThree = Math.floor(Math.random(0, 12) * 10)
         </div>
         {books.map((book, i) => {
           if (i === randomOne) {
-            return (<BigCard img={book.img} title={book.title} description={book.description}/>)
+            return (
+              <BigCard
+                key={book._id}
+                img={book.img}
+                title={book.title}
+                description={book.description}
+              />
+            );
           }
         })}
         <Books />
@@ -55,7 +70,14 @@ const randomThree = Math.floor(Math.random(0, 12) * 10)
         </div>
         {books.map((book, i) => {
           if (i === randomTwo) {
-            return (<BigCard img={book.img} title={book.title} description={book.description}/>)
+            return (
+              <BigCard
+                key={book._id}
+                img={book.img}
+                title={book.title}
+                description={book.description}
+              />
+            );
           }
         })}
         <Books />

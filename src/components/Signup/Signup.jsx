@@ -32,15 +32,15 @@ export default function Signup() {
     if (password.length < 6) {
       return alert("Пароль не должен быть меньше 6 символов");
     }
-   await dispatch(createUser(login, password, userName));
+    await dispatch(createUser(login, password, userName));
     if (!error) {
-       await dispatch(auth(login, password))
+      await dispatch(auth(login, password));
     }
   };
 
   return (
     <>
-      <Modal.Header >
+      <Modal.Header>
         <Modal.Title id="contained-modal-title-vcenter" className="title">
           Регистрация
         </Modal.Title>

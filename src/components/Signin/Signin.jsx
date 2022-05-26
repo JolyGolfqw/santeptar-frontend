@@ -29,15 +29,11 @@ export default function Signin(props) {
     }
     dispatch(auth(login, password));
     setTimeout(() => {
-      window.location.reload()
-    }, 500)
+      window.location.reload();
+    }, 500);
   };
   return (
-    <Modal
-      {...props}
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
+    <Modal {...props} aria-labelledby="contained-modal-title-vcenter" centered>
       {!signup ? (
         <>
           <Modal.Header>
@@ -71,7 +67,9 @@ export default function Signin(props) {
             </div>
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={(e) => handleAuth(e)} className="btn">Войти</Button>
+            <Button onClick={(e) => handleAuth(e)} className="btn">
+              Войти
+            </Button>
           </Modal.Footer>
           <div className="footer-signup">
             У вас нет аккаунта?{" "}

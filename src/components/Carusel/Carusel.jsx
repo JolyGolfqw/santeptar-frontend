@@ -1,21 +1,20 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
-import styles from "../Carusel/Carusel.module.css";
+import styles from "../Carusel/carusel.module.css";
 import { useSelector } from "react-redux";
 
 const Carusel = () => {
-  
   const userName = useSelector((state) => state.application.userName);
 
   return (
     <div className={styles.bgcolor}>
       <h1>
-        Добро пожаловать, <span>{userName ? userName : 'Гость'}!</span>
+        Добро пожаловать, <span>{userName ? userName : "Гость"}!</span>
       </h1>
       <div className={styles.text}>
         Найдите свою историю благодоря силе сообщества и технологиям{" "}
-        <span className={styles.spam}>book reader</span>
+        <span className={styles.spam}>santeptar</span>
       </div>
       <Carousel
         className={styles.main}

@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { loadCategories } from "../../redux/features/categories";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+
 const Categories = () => {
   const categories = useSelector((state) => state.categories.items);
   const error = useSelector((state) => state.error);

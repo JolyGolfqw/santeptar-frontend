@@ -6,6 +6,7 @@ import "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js";
 import { useDispatch, useSelector } from "react-redux";
 import { loadCategories } from "../../redux/features/categories";
 import { useParams } from "react-router-dom";
+
 const CategotyLinkPage = () => {
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.categories.items);
@@ -15,13 +16,12 @@ const CategotyLinkPage = () => {
     dispatch(loadCategories());
   }, [dispatch]);
 
-
   return (
     <div className={styles.content}>
       <Header />
-      {categories.map(item => {
+      {categories.map((item) => {
         if (item._id === id) {
-          return <h1>{`${item.name} Истории`}</h1>
+          return <h1>{`${item.name} Истории`}</h1>;
         }
       })}
       <div className={styles.container}>
@@ -116,11 +116,11 @@ const CategotyLinkPage = () => {
       <div className={styles.booksRender}>
         <div className={styles.booksRenderHeader}>
           <div className={styles.booksLength}>
-          {categories.map(item => {
-        if (item._id === id) {
-          return <span>{`${item.name} Истории`}</span>
-        }
-      })}
+            {categories.map((item) => {
+              if (item._id === id) {
+                return <span>{`${item.name} Истории`}</span>;
+              }
+            })}
           </div>
           <div className={styles.sort}>
             Сортировка по:

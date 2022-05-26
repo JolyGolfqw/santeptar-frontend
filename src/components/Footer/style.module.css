@@ -2,6 +2,7 @@
   width: 100%;
   background-color: rgb(232, 244, 244);
 }
+
 .footer_content {
   border-top: 2px solid rgba(0, 0, 0, 0.481);
   width: 90%;
@@ -21,13 +22,13 @@
   display: flex;
   width: 110px;
   justify-content: space-between;
-	font-size: 18px;
-	font-weight: 600;
-	font-family: 'Neucha', cursive;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Neucha", cursive;
 }
 
 .footerTextleft {
-	font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #eb442b;
-	font-weight: 700;
+  font-weight: 700;
 }

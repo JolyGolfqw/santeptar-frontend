@@ -1,37 +1,38 @@
 .firstSection {
-	padding: 25px 0px 60px 0px;
-	background-color: #f7ede8;
+  padding: 25px 0px 60px 0px;
+  background-color: #f7ede8;
 }
 
 .userInfo {
-	padding: 50px 0 50px 0;
+  padding: 50px 0 50px 0;
 }
 
-.userStories p, .userStories h1 {
-	margin: 0px;
-	margin-left: 120px;
+.userStories p,
+.userStories h1 {
+  margin: 0px;
+  margin-left: 120px;
 }
 
 .userStories p {
-	margin-top: 10px;
-	font-size: 18px;
+  margin-top: 10px;
+  font-size: 18px;
 }
 
 .userStories {
-	padding: 50px 0 50px 0;
-	background-color: #edf3f7;
+  padding: 50px 0 50px 0;
+  background-color: #edf3f7;
 }
 
 .userReadingBook {
-	background-color: #fff;
-	padding: 50px 0 50px 0;
+  background-color: #fff;
+  padding: 50px 0 50px 0;
 }
 
 .userReadingBook h1 {
-	margin: 0px;
-	margin-left: 120px;
-} 
+  margin: 0px;
+  margin-left: 120px;
+}
 
 .carousel {
-	display: flex;
+  display: flex;
 }

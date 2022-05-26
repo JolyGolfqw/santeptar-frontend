@@ -21,7 +21,7 @@ const WhileReadingCarousel = () => {
         </div>
       </Carousel.Item>
       <Carousel.Item>
-      <div className={styles.reversCard}>
+        <div className={styles.reversCard}>
           <div>
             <WhileReadingCardThree />
           </div>

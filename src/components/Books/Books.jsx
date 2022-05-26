@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import SmallCard from "./SmallCard/SmallCard";
 import { loadBooks } from "../../redux/features/books";
 import { useDispatch, useSelector } from "react-redux";
-import styles from "../Books/Books.module.css";
-import ModalBookDesc from "../ModalBookDesc/ModalBookDesc";
+import styles from "../Books/books.module.css";
 import { useParams } from "react-router-dom";
 
 const Books = () => {
@@ -12,7 +11,6 @@ const Books = () => {
   const loading = useSelector((state) => state.books.loading);
   const dispatch = useDispatch();
   const { id } = useParams();
-
 
   useEffect(() => {
     dispatch(loadBooks());

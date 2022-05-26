@@ -8,17 +8,17 @@
   margin: auto;
   width: 70%;
   margin-top: 120px;
-	margin-bottom: 30px;
+  margin-bottom: 30px;
   box-shadow: 48px;
   box-shadow: 0px 2px 10px 2px rgb(34 60 80 / 20%);
   border-radius: 8px;
-	background-color: #fff;
-	cursor: pointer;
-	transition: 0.2s ease;
+  background-color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 
 .bigCardBasis:hover {
-	background-color: #dbdbdb1f;
+  background-color: #dbdbdb1f;
 }
 
 .bigCardImg {
@@ -51,63 +51,64 @@
 }
 
 .endedStories {
-	text-align: center;
-	width: 35%;
-	background-color: #198754;
-	color: white;
-	padding: 10px;
-	padding-bottom: 7px;
-	border-radius: 15px;
+  text-align: center;
+  width: 35%;
+  background-color: #198754;
+  color: white;
+  padding: 10px;
+  padding-bottom: 7px;
+  border-radius: 15px;
 }
 
 .endedStories h5 {
-	font-size: 15px;
-	margin: 0;
+  font-size: 15px;
+  margin: 0;
 }
 
 .info {
-	display: flex;
-	margin: 15px 0px 10px 0px;
+  display: flex;
+  margin: 15px 0px 10px 0px;
 }
 
-.likes, .time {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+.likes,
+.time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.likesIcon, .bookIcon {
-	display: flex;
+.likesIcon,
+.bookIcon {
+  display: flex;
 }
 
-.likesIcon div, .bookIcon div {
-	margin-right: 10px;
-	font-size: 20px;
+.likesIcon div,
+.bookIcon div {
+  margin-right: 10px;
+  font-size: 20px;
 }
-
 
 .likes {
-	margin-right: 25px;
-	border-right: 1px solid gray;
-	padding-right: 25px;
+  margin-right: 25px;
+  border-right: 1px solid gray;
+  padding-right: 25px;
 }
 
 .btnContainer {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .readBook {
-	width: 100px;
-	float: right;
-	background-color: black;
-		border: none;
-
+  width: 100px;
+  float: right;
+  background-color: black;
+  border: none;
 }
 .readBook:hover {
-	width: 100px;
-	float: right;
-	color: black;
-	background-color: white;
-	border: none;
+  width: 100px;
+  float: right;
+  color: black;
+  background-color: white;
+  border: none;
 }
