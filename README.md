@@ -30,4 +30,10 @@
 - https://github.com/JolyGolfqw/santeptar-backend скачать и прописать (npx nodemon)
 - скачать текущий репозиторий и прописать (npm start)
 
-![Image alt](https://github.com/JolyGolfqw/second-life/blob/main/Снимок.PNG)
+![Image alt](https://github.com/JolyGolfqw/santeptar-frontend/blob/main/santeptar.PNG)
+![Image alt](https://github.com/JolyGolfqw/santeptar-frontend/blob/main/santeptar1.PNG)
+![Image alt](https://github.com/JolyGolfqw/santeptar-frontend/blob/main/santeptar2.PNG)
+![Image alt](https://github.com/JolyGolfqw/santeptar-frontend/blob/main/santeptar3.PNG)
+![Image alt](https://github.com/JolyGolfqw/santeptar-frontend/blob/main/santeptar4.PNG)
+![Image alt](https://github.com/JolyGolfqw/santeptar-frontend/blob/main/santeptar5.PNG)
+![Image alt](https://github.com/JolyGolfqw/santeptar-frontend/blob/main/santeptar6.PNG)
