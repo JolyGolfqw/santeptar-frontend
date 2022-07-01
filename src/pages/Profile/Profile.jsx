@@ -25,10 +25,6 @@ const Profile = () => {
 
   const userBooks = books.filter((item) => item.author._id === id);
 
-  if (loader) {
-    return <div>Загрузка...</div>;
-  }
-
   return users.map((item) => {
     if (item._id === id) {
       return (

@@ -34,9 +34,6 @@ const SingleBookRead = () => {
     dispatch(unLike(signUser, id));
   };
 
-  if (loader) {
-    return <div>Загрузка....</div>;
-  }
 
   return books.map((item) => {
     if (item._id === id) {
